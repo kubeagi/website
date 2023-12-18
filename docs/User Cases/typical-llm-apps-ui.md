@@ -13,6 +13,8 @@ Here are some web based applications built using streamlit.
 * application name: base-chat-english-teacher
 * application namespace: kubeagi-system
 
+See details about [how it works](./llm-workflow-llmchain.md)
+
 ## Chat application using private knowledgebase
 
 * application definition: refer to config/samples/app_retrievalqachain_knowledgebase.yaml
@@ -22,8 +24,6 @@ Here are some web based applications built using streamlit.
 
 Here is the workflow described using a chart.
 
-![图 0](images/ed793c984e16ade61f5c369e32e6cbb13f1ce3391d7f77a8cdecd852ad0013df.png)  
-
-
+![图 1](images/c160596aafab9f075cee72e9d82f2d52946724d2feef4bb7c1297fb01a47edb1.png)
 
 You should update the application definition/code/name/namespace as your requirement, and then just copy the python script to the streamlit application folder and play with it.

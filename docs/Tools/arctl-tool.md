@@ -357,7 +357,7 @@ Kubernetes 是一个提供平台即服务（PaaS）模型的系统，它使开�
 Arcadia 项目包含了一些用于增强 Golang 中 AI 功能的软件包。其中，智谱 AI（ZhiPuAI）是一个 LLM（大型语言模型）软件包，提供了示例代码供开发者参考。
 ```
 
-## Limitations
+## Requirement
 
 1. Vector Store
 
