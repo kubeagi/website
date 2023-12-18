@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-title: prepare and start
-sidebar_label: Prepare and start
+title: Prepare and Start
+sidebar_label: Prepare and Start
 ---
 # Prepare and start contribute to KubeAGI
 

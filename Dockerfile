@@ -1,6 +1,6 @@
 ## Production ##################################################################
 # Also define a production target which doesn't use devDeps
-FROM arbiter/docs-node-base:lts as production
+FROM kubeagi/docs-node-base:lts as production
 WORKDIR /home/node/app
 
 # Copy the source code over

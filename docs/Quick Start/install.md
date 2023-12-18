@@ -130,7 +130,7 @@ kubectl get pods -n kubeagi-system
 TODO
 ```
 
-* Start run your first LLM application *[run llm application](./run-llm-application.md)*
+* Start run your first LLM application *[run llm application](./run-llm-app-using-streamlit.md)*
 
 6. Access the kubeagi Portal
 

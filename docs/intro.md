@@ -38,7 +38,7 @@ If you don't have a kubernetes cluster, you can schedule a [kind cluster](https:
 
 ## CLI
 
-We provide a Command Line Tool `arctl` to interact with `arcadia`. See [here](./pkg/arctl/README.md) for more details.
+We provide a Command Line Tool `arctl` to interact with `arcadia`. See [here](./tools/arctl-tool) for more details.
 
 - ✅ datasource management
 - ✅ local dataset management
@@ -75,7 +75,7 @@ To enhace the AI capability in Golang, we developed some packages.Here are the e
 
 ## Contribute to Arcadia
 
-If you want to contribute to Arcadia, refer to [contribute guide](CONTRIBUTING.md).
+If you want to contribute to Arcadia, refer to [contribute guide](./Contribute/prepare-and-start.md).
 
 ## Support
 

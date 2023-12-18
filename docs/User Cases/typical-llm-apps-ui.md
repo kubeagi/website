@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 5
 title: Typical LLM Apps with UI
 sidebar_label: Typical LLM Apps with UI
 ---
