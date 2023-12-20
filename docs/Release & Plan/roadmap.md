@@ -56,3 +56,6 @@ sidebar_label: Roadmap
   - Refer Databricks to enhance the developer experience
 * Implement gray release for LLM applications based on AI gateway
 
+### v1.x and future
+* Integrate with Ray (kuberay) to accelerate ML workloads.
+* 

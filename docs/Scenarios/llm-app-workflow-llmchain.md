@@ -92,29 +92,6 @@ spec:
   output:
     apiGroup: "arcadia.kubeagi.k8s.com.cn"
     kind: "Output"
----
-apiVersion: arcadia.kubeagi.k8s.com.cn/v1alpha1
-kind: LLM
-metadata:
-  name: base-chat-english-teacher
-  namespace: arcadia
-spec:
-  type: "zhipuai"
-  provider:
-    endpoint:
-      url: "https://open.bigmodel.cn/api/paas/v3/model-api" # replace this with your LLM URL(Zhipuai use predefined url https://open.bigmodel.cn/api/paas/v3/model-api)
-      authSecret:
-        kind: secret
-        name: base-chat-english-teacher
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: base-chat-english-teacher
-  namespace: arcadia
-type: Opaque
-data:
-  apiKey: "<api-key>"
 ```
 Here is the diagram that shows the nodes and referred resources, it may help you understand how it works.
 
