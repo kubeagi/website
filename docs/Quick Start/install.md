@@ -48,26 +48,32 @@ docker pull kubeagi/chroma:0.4.14
 docker pull kubeagi/streamlit:v1.29.0
 
 ```
-1. Preparation
+3. Install dependent component
 
 * Install kubebb following the document below
 
 [install kubebb](http://kubebb.k8s.com.cn/docs/quick-start/quick-install)
 
-* Install postgresql and create user, password and a database with name 'arcadia'
+* Chromadb, Postgresql, MinIO will be installed using sub-chart as dependency, you can check the chars folder of arcadia, and you can also disable some of them in the values.yaml
+* For nginx ingress if you're using, we need to disable http2 by configuring the attribute below in ingress nginx configMap. Or you'll meet with issues when use SSE to chat with LLM application.
 
-1）Use an existing postgresql or use docker to create a new one.
+```yaml
+apiVersion: v1
+data:
+  ...
+  use-http2: "false"
+  ...
+kind: ConfigMap
+```
 
-2）Use component management of kubebb to install postgresql, refer [repository management](http://kubebb.k8s.com.cn/docs/user-guid/repository_anagement) and use the ```postgre-oci.yaml``` under deploy/charts folder to add postgresql repository and install it from component management.
-
-2. Create the namespace to install arcadia
+4. Create the namespace to install arcadia
 ```shell
 cd deploy/charts/arcadia
 # create the namespace
 kubectl create ns kubeagi-system
 ```
 
-3. Edit the values before run helm install, we just list the required values to update below:
+5. Edit the values before run helm install, we just list the required values to update below:
 
 * Update ```<replaced-ingress-nginx-ip>``` to the ip of ingress nginx
 * Update values of apiserver.oidc to use the configuration of kubebb's u4a-component
@@ -97,22 +103,25 @@ minio:
     size: 30Gi
 
 dataprocess:
-  env:
-    minio:
-      apiURL: http://arcadia-minio:9000
-    knowledge:
-      chunkSize: 500
-      chunkOverlap: 50
-    postgres:
-      # update to the actual values
-      host: postgresql
-      port: 5432
-      user: admin
-      password: Passw0rd!
-      database: arcadia
+  port: 28888
+  config:
+    llm:
+      qa_retry_count: '2'
+
+postgresql:
+  enabled: true
+  global:
+    storageClass: "openebs-hostpath"
+    postgresql:
+      auth:
+        # default username and password
+        username: "admin"
+        password: "Passw0rd!"
+        # default database
+        database: "arcadia"
 ```
 
-4. Run helm install to install the resources and bring arcadia up
+6. Run helm install to install the resources and bring arcadia up
 
 ```shell
 # use --dry-run to test the yaml resources to be deployed
@@ -123,18 +132,21 @@ helm install arcadia -n kubeagi-system .
 kubectl get pods -n kubeagi-system
 ```
 
-5. Complete the post installation steps
+7. Complete the post installation steps
 
-* Configure data processing service
+* Update the arcadia configuration file as needed, refer to [Configuration](../Configuration/arcadia-config-file.md)
+
+* Other required steps
 ```
 TODO
-```
+``` 
+
+8. Access the kubeagi Portal
+
+* Visit ```https://portal.<replaced-ingress-nginx-ip>.nip.io``` and use proper user to login, same as how kubebb works.
 
 * Start run your first LLM application *[run llm application](./run-llm-app-using-streamlit.md)*
 
-6. Access the kubeagi Portal
-
-Visit ```https://portal.<replaced-ingress-nginx-ip>.nip.io``` and use proper user to login, same as how kubebb works.
 
 ### Some notes
 1. Expose minio console to visit your data, you can enable *minio.ingress.console* and access the console from ```https://minio-console.<replaced-ingress-nginx-ip>.nip.io```
