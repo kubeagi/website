@@ -288,31 +288,31 @@
     "message": "端到端的生命周期管理"
   },
   "Provide comprehensive management capabilities throughout the entire lifecycle of language models, including data preparation, model training, deployment, and monitoring": {
-    "message": "Provide comprehensive management capabilities throughout the entire lifecycle of language models, including data preparation, model training, deployment, and monitoring"
+    "message": "提供语言模型全生命周期的全面管理能力，包括数据准备、模型训练、部署和监控"
   },
   "Kubernetes Native": {
-    "message": "Kubernetes Native"
+    "message": "Kubernetes 云原生"
   },
   "Designed and built using native Kubernetes features, including OIDC, RBAC, Operator, multi-tenant etc ..., can seamlessly integrate with existing Kubernetes clusters and infrastructure": {
-    "message": "Designed and built using native Kubernetes features, including OIDC, RBAC, Operator, multi-tenant etc ..., can seamlessly integrate with existing Kubernetes clusters and infrastructure"
+    "message": "使用原生 Kubernetes 功能设计和构建，包括 OIDC、RBAC、Operator、多租户等...可以与现有 Kubernetes 集群和基础设施无缝集成"
   },
   "Versioning and Experiment Tracking": {
-    "message": "Versioning and Experiment Tracking"
+    "message": "版本控制和实验跟踪"
   },
   "Allow experiments and evaluations, enables reproducibility, comparison of different model versions, and efficient collaboration among team members.": {
-    "message": "Allow experiments and evaluations, enables reproducibility, comparison of different model versions, and efficient collaboration among team members."
+    "message": "允许实验和评估，实现可重复性、不同模型版本的比较以及团队成员之间的高效协作"
   },
   "Monitoring and Logging": {
-    "message": "Monitoring and Logging"
+    "message": "监控和日志"
   },
   "Robust monitoring and logging functionalities, allowing users to track model performance, resource utilization, and other relevant metrics": {
-    "message": "Robust monitoring and logging functionalities, allowing users to track model performance, resource utilization, and other relevant metrics"
+    "message": "强大的监控和日志记录功能，允许用户跟踪模型性能、资源利用率和其他相关指标"
   },
   "Automation and Orchestration": {
-    "message": "Automation and Orchestration"
+    "message": "自动化和编排"
   },
   "Provide automation and orchestration capabilities, streamlining the end-to-end workflow of language model development and deployment": {
-    "message": "Provide automation and orchestration capabilities, streamlining the end-to-end workflow of language model development and deployment"
+    "message": "提供自动化和编排能力，简化语言模型开发和部署的端到端工作流程"
   },
   "theme.admonition.warning": {
     "message": "注意",

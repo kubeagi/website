@@ -19,7 +19,7 @@ const FeatureList = [
     Svg: require('@site/static/img/design-to-extend.svg').default,
     description: (
       <>
-        <Translate>Designed and built using native Kubernetes features, including OIDC, RBAC, Operator, multi-tenant etc ..., can seamlessly integrate with existing Kubernetes clusters and infrastructure </Translate>
+        <Translate>Designed and built using native Kubernetes features, including OIDC, RBAC, Operator, multi-tenant etc ..., can seamlessly integrate with existing Kubernetes clusters and infrastructure</Translate>
       </>
     ),
   },
