@@ -5,7 +5,7 @@
   },
   "theme.ErrorPageContent.tryAgain": {
     "message": "重试",
-    "description": "The label of the button to try again when the page crashed"
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.NotFound.title": {
     "message": "找不到页面",
@@ -283,5 +283,71 @@
   },
   "Out-of-the-box Plugins": {
     "message": "开箱即用的插件"
+  },
+  "End-to-End Lifecycle Management": {
+    "message": "端到端的生命周期管理"
+  },
+  "Provide comprehensive management capabilities throughout the entire lifecycle of language models, including data preparation, model training, deployment, and monitoring": {
+    "message": "Provide comprehensive management capabilities throughout the entire lifecycle of language models, including data preparation, model training, deployment, and monitoring"
+  },
+  "Kubernetes Native": {
+    "message": "Kubernetes Native"
+  },
+  "Designed and built using native Kubernetes features, including OIDC, RBAC, Operator, multi-tenant etc ..., can seamlessly integrate with existing Kubernetes clusters and infrastructure": {
+    "message": "Designed and built using native Kubernetes features, including OIDC, RBAC, Operator, multi-tenant etc ..., can seamlessly integrate with existing Kubernetes clusters and infrastructure"
+  },
+  "Versioning and Experiment Tracking": {
+    "message": "Versioning and Experiment Tracking"
+  },
+  "Allow experiments and evaluations, enables reproducibility, comparison of different model versions, and efficient collaboration among team members.": {
+    "message": "Allow experiments and evaluations, enables reproducibility, comparison of different model versions, and efficient collaboration among team members."
+  },
+  "Monitoring and Logging": {
+    "message": "Monitoring and Logging"
+  },
+  "Robust monitoring and logging functionalities, allowing users to track model performance, resource utilization, and other relevant metrics": {
+    "message": "Robust monitoring and logging functionalities, allowing users to track model performance, resource utilization, and other relevant metrics"
+  },
+  "Automation and Orchestration": {
+    "message": "Automation and Orchestration"
+  },
+  "Provide automation and orchestration capabilities, streamlining the end-to-end workflow of language model development and deployment": {
+    "message": "Provide automation and orchestration capabilities, streamlining the end-to-end workflow of language model development and deployment"
+  },
+  "theme.admonition.warning": {
+    "message": "注意",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "展开侧边栏分类 '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "折叠侧边栏分类 '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "主导航",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "文档侧边栏",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "关闭导航栏",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "切换导航栏",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.unlistedContent.title": {
+    "message": "未列出页",
+    "description": "The unlisted content banner title"
+  },
+  "theme.unlistedContent.message": {
+    "message": "此页面未列出。搜索引擎不会对其索引，只有拥有直接链接的用户才能访问。",
+    "description": "The unlisted content banner message"
   }
 }
