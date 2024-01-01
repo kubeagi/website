@@ -6,7 +6,7 @@ sidebar_label: Typical LLM Apps with UI
 
 Here are some web based applications built using streamlit.
 
-About how to enable streamlit on KubeAGI, refer to [Run LLM application using Streamlit](../Quick%20Start/run-llm-app-using-streamlit.md)
+About how to enable streamlit on KubeAGI, refer to [Run LLM application using Streamlit](../QuickStart/run-llm-app-using-streamlit.md)
 
 ## Simple chat application - English teacher
 
@@ -32,7 +32,7 @@ You should update the application definition/code/name/namespace as your require
 
 ## Test Application using curl tool
 
-KubeAGI APIs can be accessed using \<kubeagi-host\>/kubeag-apis, and chat mode application can be invoked at /chat context path.
+KubeAGI APIs can be accessed using ```<kubeagi-host>/kubeag-apis```, and chat mode application can be invoked at /chat context path.
 
 So you can use curl tool to chat with application by using similar command below:
 

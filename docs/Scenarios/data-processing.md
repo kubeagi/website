@@ -92,13 +92,6 @@ backendPg:
   database: '${PG_DATABASE: arcadia}'
 ```
 
-<!-- \${MINIO_ACCESSKEY: hpU4SCmj5jixxx} -->
-
-MINIO_ACCESSKEY is the environment variable name.
-
-hpU4SCmj5jixxx is the default value if the environment variable is not set.
-
-
 ## release phase
 The example config.yml is as the following:
 ```yaml

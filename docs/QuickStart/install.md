@@ -55,16 +55,6 @@ docker pull kubeagi/streamlit:v1.29.0
 [install kubebb](http://kubebb.k8s.com.cn/docs/quick-start/quick-install)
 
 * Chromadb, Postgresql, MinIO will be installed using sub-chart as dependency, you can check the chars folder of arcadia, and you can also disable some of them in the values.yaml
-* For nginx ingress if you're using, we need to disable http2 by configuring the attribute below in ingress nginx configMap. Or you'll meet with issues when use SSE to chat with LLM application.
-
-```yaml
-apiVersion: v1
-data:
-  ...
-  use-http2: "false"
-  ...
-kind: ConfigMap
-```
 
 4. Create the namespace to install arcadia
 ```shell

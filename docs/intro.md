@@ -33,7 +33,7 @@ Our design and development in Arcadia design follows operator pattern which exte
 
 If you don't have a kubernetes cluster, you can schedule a [kind cluster](https://kind.sigs.k8s.io/). Depends on your choice on CPU or GPU when running LLM worker,you can choose to:
 
-- [Create a kind cluster with/without GPU enabled](./Quick%20Start/create-cluster-using-kind.md)
+- [Create a kind cluster with/without GPU enabled](./QuickStart/create-cluster-using-kind.md)
 
 
 ## CLI
