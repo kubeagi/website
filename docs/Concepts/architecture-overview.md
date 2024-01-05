@@ -8,7 +8,7 @@ This topic will cover the overall technical architecture of KubeAGI.
 
 For technical architecture, you can see the picture below:
 
-![图 1](images/eadbb350322004646d94da4586dc5dbcae9a1037b1e3ff390e001bf286776499.png)  
+![](./images/2024-01-05-16-40-55.png)
 
 ### Ingress
 Kubernetes ingress gateway that works as a LB to do basic routing and load balancer, you can use ingress Nginx or some other ingress.
@@ -16,7 +16,7 @@ Kubernetes ingress gateway that works as a LB to do basic routing and load balan
 ### Portal
 It's the web console for KubeAGI that it's built base on KubeBB and using Yunti low code engine [see details](http://kubebb.k8s.com.cn/docs/develop-guid/lowcode-development/intro)
 
-### bff-server/langchain-go
+### arcadia-apiserver/langchain-go
 It's used to provide the business APIs for LLMOps, including：
 * GraphQL APIs used to interact with backend Restful API
 * [langchain-go](https://github.com/tmc/langchaingo) that has the similar functionality to [langchain-python](https://github.com/langchain-ai/langchain), but writting in golang
@@ -38,7 +38,10 @@ Use for various model services, including OpenAI API or other model service. And
 
 * FastChat Registry: Serve as a central repository for managing and organizing chatbot models. It provides a catalog of available models, along with their descriptions, versions, and other relevant metadata. The registry allows users to search for specific models, explore their capabilities, and access the necessary information for utilizing them in the FastChat API.
 
+### Ray Clusters
+* A distributed computing framework that provides a range of capabilities for executing distributed workloads, including distributed inference.
+
 [See details on github](https://github.com/lm-sys/FastChat)
 
-### Arcadia-manager/Arcadia-controller
+### Arcadia-controller/arcadia-apiserver
 Used as a Kubernetes controller that keep all LLMOps CRDs in the descried state.

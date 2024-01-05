@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 4
 title: SSE Support
 sidebar_label: SSE Support
 ---

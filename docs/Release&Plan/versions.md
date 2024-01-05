@@ -3,13 +3,11 @@ sidebar_position: 1
 title: Versions
 sidebar_label: Versions
 ---
+# Released Versions
 
-### v0.2.0 - Ongoing
+### v0.1.0 - 2023/12/29
 
-
-
-
-### v0.1.0 - 2023/12/22
+[Release Notes](https://github.com/kubeagi/arcadia/releases/tag/v0.1.0)
 
 * Dataset Management - manage data, including local files, integrate with object storage(s3), data editing, version control, and file download
 * Data Processing - data cleaning, text splitting (e.g., text segmentation, QA splitting), file labeling

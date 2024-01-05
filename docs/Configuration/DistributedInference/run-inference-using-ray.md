@@ -10,27 +10,46 @@ sidebar_label:  Distributed Inference using Ray
 
 To use distributed inference for local model deployment, we can add some environment variables to fastchat ```Worker``` to enable it, then fastchat can run in vLLM mode with Ray enabled.
 
-1. Set ```NUMBER_GPUS``` to a value bigger than 1, so ray will init when run vLLM worker, and ray can only be supported using vLLM mode.
+1. Configure ray cluster(s) in the arcadia-config file, for example:
+```
+... # we can add multiple ray clusters and use one of them when run the worker
+    rayClusters:
+    - name: 3090-2-GPUs
+      headAddress: raycluster-kuberay-head-svc.kuberay-system.svc:6379
+      pythonVersion: 3.9.18
+...
+```
+For headAddress of ray cluster, we can use the cluster DNS name if worker will be in the same cluster as the ray head.
 
-2. Set environment variable ```RAY_ADDRESS``` to the address of ray cluster, by default it can be accessed at ```raycluster-kuberay-head-svc.kuberay-system.svc:6379``` inside Kubernetes cluster.
+2. When start the fastchat worker, add additional environment variabes as below:
+```
+apiVersion: arcadia.kubeagi.k8s.com.cn/v1alpha1
+kind: Worker
+...
+spec:
+  additionalEnvs:
+  - name: NUMBER_GPUS
+    value: "2"
+  - name: RAY_CLUSTER_INDEX
+    value: "0"
+  creator: admin
+  description: qwen-7b
+  displayName: qwen-7b
+  resources:
+    limits:
+      cpu: "4"
+      memory: 16Gi
+      nvidia.com/gpu: "1"
+...
+```
+Set ```NUMBER_GPUS``` to the number of GPUs that will request from the ray cluster. And the number of nvidia.com/gpu from resources will be used by the worker when Kubernetes try to scheduler this worker's pod.
+
+Set ```RAY_CLUSTER_INDEX``` to the index of ray cluster in the arcadia-config file, by default it'll be 0, so the 1st ray cluster will be used on the resource pool.
 
 ```
-# Note: you must use the images below for vLLM and Ray integration:
-# kubeagi/arcadia-fastchat:v0.1.0-vllm
+# Note: the images below for vLLM and Ray integration:
+# for fastchat worker
+# kubeagi/arcadia-fastchat-worker:vllm-v0.1.0
+# for head of ray cluster
 # kubeagi/ray-ml:2.9.0-py39-vllm
-# Update the command of fastchat pod to the command below (add 'ray start' before vllm_worker starts)
-echo "Start ray worker"
-ray start --address=$RAY_ADDRESS
-echo "Run model worker..."
-python3.9 -m fastchat.serve.model_worker --model-names $FASTCHAT_REGISTRATION_MODEL_NAME --model-path /data/models/qwen-14b-chat --worker-address $FASTCHAT_WORKER_ADDRESS --controller-address $FASTCHAT_CONTROLLER_ADDRESS --num-gpus $NUMBER_GPUS --host 0.0.0.0 --port 21002
 ```
-
-## Use specified GPUs
-
-If you have different type of GPUs on the node, use environment variables to control which GPUs to use:
-```
-CUDA_DEVICE_ORDER=PCI_BUS_ID # the GPU IDs will be ordered by pci bus IDs.
-CUDA_VISIBLE_DEVICES="0,3"  # specify which GPU(s) to be used
-```
-
-So you can use nodeSelector or nodeAffinity to schedule fastchat worker pod to the specified node(s) and set the environment variables above, then the expected GPUs will be used.

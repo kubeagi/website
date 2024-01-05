@@ -1,13 +1,19 @@
 ---
 sidebar_position: 3
-title: Create LLM App
-sidebar_label: Create LLM App
+title: Create LLM Agent
+sidebar_label: Create LLM Agent
 ---
 
-上一章节，我们通过导入文件，构建了自己的知识库，下面我们将使用这个知识库来创建一个会话类的大模型应用。
+通过平台的应用管理，可以通过可视化的方式快速创建 AI 智能体，并对自己的智能体进行编排和调试。
 
-* 参考 [Application Workflow - LLMChain](../Scenarios//llm-app-workflow-llmchain.md) 来创建一个简单的 LLM 应用
+![](./images/2024-01-05-17-11-41.png)
 
-* 参考 [Typical LLM Apps with UI](../Scenarios/typical-llm-apps-ui.md) 基于 streamlit 来构建一个聊天机器人
+AI 智能体支持对以下数据进行配置：
+* 对话开场白
+* 模型服务
+* 知识库
+* 提示词（Prompt）
 
-可视化的应用编排及管理能力将在 v0.2.0 版本中发布。
+通过“保存并预览”，可以即时的同 AI 智能体进行交互，体验当前配置情况下的回复效率及质量。
+
+通过 yaml 编排的方式生成 AI 智能体，参考 [LLM 应用工作流](../Scenarios/llm-app-workflow-llmchain.md)

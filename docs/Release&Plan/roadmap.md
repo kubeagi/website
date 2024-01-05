@@ -5,7 +5,7 @@ sidebar_label: Roadmap
 ---
 # Roadmap
 
-### v0.2.0 - 2024 Feb.
+### v0.2.0 - 2024 Feb. Ongoing
 * Support evaluation of Prompts under different LLMs and generate test reports.
 * RAG evaluation and RAG Question Generation
   - Optimize question generation, analyze question quality, filter out low-similarity questions
@@ -57,5 +57,5 @@ sidebar_label: Roadmap
 * Implement gray release for LLM applications based on AI gateway
 
 ### v1.x and future
-* Integrate with Ray (kuberay) to accelerate ML workloads.
+* Improve user experience and system efficiency
 * 
