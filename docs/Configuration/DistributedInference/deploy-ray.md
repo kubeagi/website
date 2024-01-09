@@ -11,6 +11,14 @@ Install Ray if we need to use distributed inference capability, following the st
 * Refer [Ray Quick Start](https://docs.ray.io/en/master/cluster/kubernetes/getting-started/raycluster-quick-start.html) for details.
 * Refer [Ray Cluster Concepts](https://docs.ray.io/en/master/cluster/key-concepts.html) for details.
 
+```
+# Note: the images below for vLLM and Ray integration:
+# for fastchat worker
+# kubeagi/arcadia-fastchat-worker:vllm-v0.1.0
+# for head of ray cluster
+# kubeagi/ray-ml:2.9.0-py39-vllm
+```
+
 1. Deploy the kuberay opeartor
 
 ```shell
@@ -49,7 +57,7 @@ spec:
           app.kubernetes.io/name: kuberay
       spec:
         containers:
-        - image: rayproject/ray-ml:2.8.1
+        - image: kubeagi/ray-ml:2.9.0-py39-vllm
           name: ray-head
           resources:
             limits:
@@ -79,7 +87,7 @@ spec:
           app.kubernetes.io/name: kuberay
       spec:
         containers:
-        - image: rayproject/ray-ml:2.8.1
+        - image: kubeagi/ray-ml:2.9.0-py39-vllm
           name: ray-worker
           resources:
             limits:

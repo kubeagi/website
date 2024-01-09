@@ -45,11 +45,3 @@ spec:
 Set ```NUMBER_GPUS``` to the number of GPUs that will request from the ray cluster. And the number of nvidia.com/gpu from resources will be used by the worker when Kubernetes try to scheduler this worker's pod.
 
 Set ```RAY_CLUSTER_INDEX``` to the index of ray cluster in the arcadia-config file, by default it'll be 0, so the 1st ray cluster will be used on the resource pool.
-
-```
-# Note: the images below for vLLM and Ray integration:
-# for fastchat worker
-# kubeagi/arcadia-fastchat-worker:vllm-v0.1.0
-# for head of ray cluster
-# kubeagi/ray-ml:2.9.0-py39-vllm
-```
