@@ -39,6 +39,7 @@ kubectl get pods -n kuberay-system
 
 Create a ray cluster using yaml below, update the values as needed. And head and worker node require GPU resource, make sure you have scheduable GPUs. 
 * By default, no worker will be deployed, we just need a head node to manage ray cluster.
+* For ray cluster, all members MUST have the same model files, so prepare the model files on each member before starting the model.
 
 ```yaml
 apiVersion: ray.io/v1
