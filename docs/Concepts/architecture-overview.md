@@ -38,10 +38,10 @@ Use for various model services, including OpenAI API or other model service. And
 
 * FastChat Registry: Serve as a central repository for managing and organizing chatbot models. It provides a catalog of available models, along with their descriptions, versions, and other relevant metadata. The registry allows users to search for specific models, explore their capabilities, and access the necessary information for utilizing them in the FastChat API.
 
+[See details on github](https://github.com/lm-sys/FastChat)
+
 ### Ray Clusters
 * A distributed computing framework that provides a range of capabilities for executing distributed workloads, including distributed inference.
-
-[See details on github](https://github.com/lm-sys/FastChat)
 
 ### Arcadia-controller/arcadia-apiserver
 Used as a Kubernetes controller that keep all LLMOps CRDs in the descried state.
