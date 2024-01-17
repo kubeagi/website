@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 20
 title: LLM Applications
 sidebar_label: LLM Applications
 ---

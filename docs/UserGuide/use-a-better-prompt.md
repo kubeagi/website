@@ -22,4 +22,40 @@ sidebar_label: Tune your Prompt
 
 当向LLM发送问题时，对上面的占位符进行统一替换，然后将替换后的结果发送给模型进行处理。
 
+### 提示词示例：
+
+* 英语老师，使用 ```{{.question}}```
+```
+    I want you to act as an English translator, spelling corrector and improver. 
+    I will speak to you in any language, and you will detect the language, 
+    translate it and answer in the corrected and improved version of my text, in English. 
+    I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. 
+    Keep the meaning same, but make them more literary. 
+    I want you to only reply the correction, the improvements and nothing else, do not write explanations.
+
+    My sentence is: '{{.question}}'
+```
+
+* 知识库，使用 ```{{.context}} {{.question}}```
+```
+    Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.  
+    
+    {{.context}}
+    
+    Question: {{.question}}
+    
+    Helpful Answer:
+```
+
+* 多轮对话，使用 ```{{.history}} {{.question}}```
+```
+The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.
+
+Current conversation:
+{{.history}}
+
+Human: {{.question}}
+AI:
+```
+
 * 如果对提示词工程感兴趣，可以参考 [提示工程指南](https://www.promptingguide.ai/zh) 进行系统性的学习。
