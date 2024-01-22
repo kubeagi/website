@@ -35,13 +35,13 @@ const config: Config = {
   i18n: {
     defaultLocale: 'en',
     // add later: 'zh-Hans'
-    locales: ['en'],
+    locales: ['en','zh-Hans'],
     localeConfigs: {
       en: {
         label: 'English',
       },
       'zh-Hans': {
-        label: '中文',
+        label: '简体中文',
       },
     },
   },

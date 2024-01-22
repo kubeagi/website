@@ -37,16 +37,16 @@ type WorkerStatus struct {
 }
 ```
 #### Spec字段详解
-* CommonSpec： 基础的描述性信息
+* CommonSpec: 基础的描述性信息
 * Type: 模型工作节点的类型，目前分为:
     - fastchat
     - fastchat-vllm
-* Model： 模型工作节点运行的模型对应的CR。模型CR中记录模型的存储信息，用于后续模型部署时加载模型文件使用
-* Resource； 模型工作节点运行时申请的资源，包括:
+* Model: 模型工作节点运行的模型对应的 CR。模型CR中记录模型的存储信息，用于后续模型部署时加载模型文件使用
+* Resource: 模型工作节点运行时申请的资源，包括:
     - CPU
     - Memory
     - GPU: "nvidia.com/gpu: "1" # request 1 GPU"
-* Storage: 申请的持久化存储(如果为空，默认采用emptydir在pod内部共享数据)
+* Storage: 申请的持久化存储(如果为空，默认采用 emptydir 在 pod 内部共享数据)
 
 Worker 的启动流程、注册会话、调用流程参考下图示意：
 
