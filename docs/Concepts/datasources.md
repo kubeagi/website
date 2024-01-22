@@ -13,11 +13,11 @@ Datasources support Object storage, MySQL, MongoDB, Data API etc.
 ### 数据源分类
 按照数据源本身的类型可分为两大类:
 * 存储数据源，包括对象存储(OSS)、关系型数据库(Mysql,Postgresql)、非关系型数据库(Mongodb)等
-* 实时数据源,包括GoogleSearch、OpenAPI等
+* 实时数据源，包括GoogleSearch、OpenAPI等
 
-按照数据源本身的服务来源分为三大类:
+按照数据源本身的服务来源分为两大类:
 * 系统数据源: 数据来源于Arcadia 内部，默认采用  Minio(OSS) 对象存储
-* 第三方数据源: 数据由第三方数据服务提供，由用户自行部署或获取的数据源服务。
+* 第三方数据源: 数据由第三方数据服务提供，由用户自行部署或获取的数据源服务
 
 单个项目（命名空间）对应一个bucket，每个bucket默认包含两个子目录：
 * dataset: 用于存储数据集文件

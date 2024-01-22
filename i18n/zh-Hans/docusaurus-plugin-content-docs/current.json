@@ -94,5 +94,21 @@
   "sidebar.tutorialSidebar.category.Release & Plan.link.generated-index.description": {
     "message": "Release & Plan",
     "description": "The generated-index page description for category Release & Plan in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Distributed Inference": {
+    "message": "Distributed Inference",
+    "description": "The label for category Distributed Inference in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Distributed Inference.link.generated-index.description": {
+    "message": "Distributed inference using Ray cluster",
+    "description": "The generated-index page description for category Distributed Inference in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.APIs": {
+    "message": "APIs",
+    "description": "The label for category APIs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.APIs.link.generated-index.description": {
+    "message": "APIs for LLM application development",
+    "description": "The generated-index page description for category APIs in sidebar tutorialSidebar"
   }
 }

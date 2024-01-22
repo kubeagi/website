@@ -50,8 +50,7 @@ type Model struct {
 
 * 模型管理核心流程
 1. 用户创建 CR Model，仅包含展示名、描述信息
-2. 用户上传模型文件到对应的模型文件目录，如下：
-如果 model.metadata.name 为 chatglm2-6b，创建在命名空间 kubeagi-test 下，则模型文件则需要上传到:
-    - bucket:  kubeagi-test 
-    - object：  model/chatglm2-6b/ 
+2. 用户上传模型文件到对应的模型文件目录，例如：如果 model.metadata.name 为 chatglm2-6b，创建在命名空间 kubeagi-test 下，则模型文件则需要上传到:
+    - bucket: kubeagi-test 
+    - object: model/chatglm2-6b/ 
 3. 更新 model 的 Type 字段，重新触发 operator 的更新逻辑，重新验证模型存储状态

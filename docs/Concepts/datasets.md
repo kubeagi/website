@@ -38,9 +38,9 @@ Datasets is unified management of available data, including training data sets, 
 
 ### 一. 文件上传
 文件上传分为4个步骤
-1. 调用 get_chunks 获取已经上传的块。如果是新的文件，返回值uploadid是空字符串，否则会有值。
-2. 如果第一部返回的uploadid是空，需要调用new_multipart，获取uploadid
-3. 根据得到uploadid调用get_multipart_url获取每个分块的上传url
-4. 得到url后，直接 PUT，body就是文件的内容进行上传。
-5. 每个分块都上传完成后，调用complete_multipart让后端完成分块的合并。
-6. 调用u pdate_chunk, 更新后端存储的上传进度。
+1. 调用 get_chunks 获取已经上传的块。如果是新的文件，返回值 uploadid 是空字符串，否则会有值；
+   如果第一部返回的 uploadid 是空，需要调用 new_multipart，获取 uploadid。
+2. 根据得到 uploadid 调用 get_multipart_url 获取每个分块的上传 url；
+   得到 url 后，直接 PUT，body 就是文件的内容进行上传。
+3. 每个分块都上传完成后，调用 complete_multipart 让后端完成分块的合并。
+4. 调用 update_chunk，更新后端存储的上传进度。

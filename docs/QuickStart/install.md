@@ -52,7 +52,7 @@ docker pull kubeagi/streamlit:v1.29.0
 
 * Install kubebb following the document below
 
-[install kubebb](http://kubebb.k8s.com.cn/docs/quick-start/quick-install)
+  [install kubebb](http://kubebb.k8s.com.cn/docs/quick-start/quick-install)
 
 * Chromadb, Postgresql, MinIO will be installed using sub-chart as dependency, you can check the chars folder of arcadia, and you can also disable some of them in the values.yaml
 
