@@ -1,0 +1,8 @@
+{
+  "label": "APIs",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "APIs for LLM application development"
+  }
+}
