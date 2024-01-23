@@ -6,41 +6,38 @@ sidebar_label: Datasets and VersionedDatasets
 
 Datasets is unified management of available data, including training data sets, knowledge base data sets, etc. Supports independent version iteration, data viewing, and data update.
 
-## 简介
-数据集代表用户纳管的一组相关属性的文件，采用相同的方式进行数据处理，并用于后续的模型训练、知识库等数据的管理。
+## Introduction
+The datasets represent a set of files with relevant attributes that are managed by the user. These files are processed in the same way and used for subsequent model training, knowledge base and other data management.
 
-### 相关功能
-* 支持多种类型数据:
-    - 文本
-    - 图片
-    - 视频
-* 单个数据集仅允许包含同一类型文件，不同类型文件将被忽略
-* 数据集允许有多个版本，数据处理针对单个版本进行
-* 数据集某个版本完成数据处理后，数据处理服务需要将处理后的存储回 ```版本数据集```
+### Related Features
+* Supports multiple types of data:
+    - Text
+    - Images
+    - Videos
+* A single dataset is only allowed to contain files of the same type, different types of files will be ignored.
+* Multiple versions of the datasets are allowed, and data processing is performed for a single version.
+* After a version of a dataset has completed its data processing, the data processing service needs to store the processed storage back into ```VersionedDatasets```.
 
+## Resource Abstraction
+To implement dataset management capabilities, two Custom Resource Definitions (CRDs) are used:
+* CRD Dataset: defines dataset global parameters, including:
+    - Dataset data type
+    - Application scenario
+    - Creator
+    - Display name
+* CRD VersionedDataset: defines the parameters related to versions, including:
+    - Dataset
+    - Version number
+    - List of files managed under the versioned dataset
 
-## 资源抽象
-通过两个CRD来实现数据集管理能力: 
-* CRD Dataset: 定义数据集全局参数，如:
-    - 数据集数据类型
-    - 应用场景
-    - 创建者
-    - 展示名
-* CRD VersionedDataset: 定义版本相关的参数，如
-    - 数据集
-    - 版本号
-    - 版本数据集下纳管的文件列表
-
-数据集数据存储在系统数据源中，存储结构如下:
+The dataset data is stored in the system data source, and the storage structure is as follows:
 ![](./images/2024-01-05-15-10-23.png)
 
-## 功能实现
+## Function Implementation
 
-### 一. 文件上传
-文件上传分为4个步骤
-1. 调用 get_chunks 获取已经上传的块。如果是新的文件，返回值uploadid是空字符串，否则会有值。
-2. 如果第一部返回的uploadid是空，需要调用new_multipart，获取uploadid
-3. 根据得到uploadid调用get_multipart_url获取每个分块的上传url
-4. 得到url后，直接 PUT，body就是文件的内容进行上传。
-5. 每个分块都上传完成后，调用complete_multipart让后端完成分块的合并。
-6. 调用u pdate_chunk, 更新后端存储的上传进度。
+### File Upload
+File upload consists of 4 steps:
+1. Call get_chunks to retrieve the already uploaded chunks. If it's a new file, the returned uploadid will be an empty string. Otherwise, it will have a value. If the uploadid is empty from the first step, call new_multipart to obtain a new uploadid.
+2. Use the obtained uploadid to call get_multipart_url and retrieve the upload URL for each chunk. After getting the url, directly PUT, the body is the content of the file to upload.
+3. After each chunk is uploaded, call complete_multipart to let the backend finish merging the chunks.
+4. Call update_chunk to update the upload progress stored in the backend.

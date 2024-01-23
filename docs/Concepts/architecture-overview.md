@@ -16,7 +16,7 @@ Kubernetes ingress gateway that works as a LB to do basic routing and load balan
 ### Portal
 It's the web console for KubeAGI that it's built base on KubeBB and using Yunti low code engine [see details](http://kubebb.k8s.com.cn/docs/develop-guid/lowcode-development/intro)
 
-### arcadia-apiserver/langchain-go
+### Arcadia-apiserver/Langchain-go
 It's used to provide the business APIs for LLMOps, including：
 * GraphQL APIs used to interact with backend Restful API
 * [langchain-go](https://github.com/tmc/langchaingo) that has the similar functionality to [langchain-python](https://github.com/langchain-ai/langchain), but writting in golang
@@ -25,23 +25,23 @@ It's used to provide the business APIs for LLMOps, including：
 Used for vector data(pgvector) and persist some business data.
 
 ### MinIO
-Used to store files of various model and datsets.
+Used to store files of various models and datasets.
 
 ### Data Processing
 A component used for data processing, including data cleaning, data segmentation, and automatic QA generation.
 
 ### API(AI) Gateway
-Use for various model services, including OpenAI API or other model service. And provide API lifecycle management, API governance and API observation（logging、monitoring、tracing）
+Use for various model services, including OpenAI API or other model services. And provide API lifecycle management, API governance and API observation (logging、monitoring、tracing).
 
 ### Fastchat-api & Fastchat-registry
 * FastChat API: Allow users to interact with deployed chatbot models, making requests to generate responses based on input messages. It provides a RESTful interface that can be accessed programmatically. The API supports various endpoints and methods for sending messages, retrieving responses, and managing model configurations.
 
 * FastChat Registry: Serve as a central repository for managing and organizing chatbot models. It provides a catalog of available models, along with their descriptions, versions, and other relevant metadata. The registry allows users to search for specific models, explore their capabilities, and access the necessary information for utilizing them in the FastChat API.
 
-[See details on github](https://github.com/lm-sys/FastChat)
+  [See details on github](https://github.com/lm-sys/FastChat)
 
 ### Ray Clusters
 * A distributed computing framework that provides a range of capabilities for executing distributed workloads, including distributed inference.
 
-### Arcadia-controller/arcadia-apiserver
+### Arcadia-controller/Arcadia-apiserver
 Used as a Kubernetes controller that keep all LLMOps CRDs in the descried state.

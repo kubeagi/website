@@ -5,7 +5,7 @@ sidebar_label: Workers
 ---
 ## Worker
 
-通过 arcadia 来运行模型的本地模型服务示例，用来驱动基于 fastchat 的各类模型服务的快速部署。Worker 资源定义：
+Example of a local model service running models through arcadia to drive rapid deployment of various fastchat-based model services.Worker resource is defined:
 ```golang
 // WorkerSpec defines the desired state of Worker
 type WorkerSpec struct {
@@ -36,19 +36,19 @@ type WorkerStatus struct {
     ConditionedStatus `json:",inline"`
 }
 ```
-#### Spec字段详解
-* CommonSpec： 基础的描述性信息
-* Type: 模型工作节点的类型，目前分为:
+#### Spec Field Details
+* CommonSpec: Basic descriptive information
+* Type: Type of model worker node, currently classified as：
     - fastchat
     - fastchat-vllm
-* Model： 模型工作节点运行的模型对应的CR。模型CR中记录模型的存储信息，用于后续模型部署时加载模型文件使用
-* Resource； 模型工作节点运行时申请的资源，包括:
+* Model: The CR of the model run by the model worker node, which records the storage information of the model and is used to load the model file when the model is deployed.
+* Resource: The resources requested by the model worker node when it is running, including：
     - CPU
     - Memory
     - GPU: "nvidia.com/gpu: "1" # request 1 GPU"
-* Storage: 申请的持久化存储(如果为空，默认采用emptydir在pod内部共享数据)
+* Storage: Requested persistent storage (If it is empty, emptydir is used by default to share data within the pod)
 
-Worker 的启动流程、注册会话、调用流程参考下图示意：
+Worker startup process, registration session, and invocation process are illustrated in the following figure:
 
 ![](./images/2024-01-05-15-27-01.png)
 

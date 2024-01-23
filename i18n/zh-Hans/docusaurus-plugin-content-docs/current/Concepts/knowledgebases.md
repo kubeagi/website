@@ -1,10 +1,10 @@
 ---
 sidebar_position: 9
-title: Knowledgebases
-sidebar_label: Knowledgebases
+title: 知识库
+sidebar_label: 知识库
 ---
 
-Knowledgebases provide the ability to build private domain documents and knowledge management, support multiple data types, and upload data files to a vector database.
+知识库（Knowledgebases）提供构建私有领域文档和知识管理的能力，支持多种数据类型，并允许将数据文件上传到矢量数据库中。
 
 ```yaml
 apiVersion: arcadia.kubeagi.k8s.com.cn/v1alpha1

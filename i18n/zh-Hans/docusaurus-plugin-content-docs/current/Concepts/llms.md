@@ -1,12 +1,12 @@
 ---
 sidebar_position: 6
-title: LLMs
-sidebar_label: LLMs
+title: 大型语言模型
+sidebar_label: 大型语言模型
 ---
 
-LLM is used to define locally deployed model services provided through the platform or external third-party model services that are accessed.
+LLM 用来定义通过平台提供的本地部署模型服务或者接入的外部第三方模型服务。
 
-* Example of local model service
+* 本地模型服务示例
 ```yaml
 apiVersion: arcadia.kubeagi.k8s.com.cn/v1alpha1
 kind: LLM
@@ -25,7 +25,7 @@ spec:
       namespace: kubeagi-test
   type: openai
 ```
-* Third-party model service access
+* 第三方模型服务接入
 
 ```yaml
 apiVersion: arcadia.kubeagi.k8s.com.cn/v1alpha1

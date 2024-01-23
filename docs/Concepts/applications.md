@@ -4,20 +4,20 @@ title: LLM Applications
 sidebar_label: LLM Applications
 ---
 
-一个应用是一个 Application 类型的CR，其中的 spec.nodes 写明了这个应用涉及到的组件，每个组件都是一个CR。不同类型的组件归属于不同类型的 group，比如 prompts.prompt.arcadia.kubeagi.k8s.com.cn 和 chain.arcadia.kubeagi.k8s.com.cn。
+An application is a CR of type Application, where spec.nodes specifies the components involved in the application, each of which is a CR. Different types of components belong to different types of groups, such as prompts.prompt.arcadia.kubeagi.k8s.com.cn 和 chain.arcadia.kubeagi.k8s.com.cn.
 
-同一个类型的组件，具体是不同的类型通过 kind 区分，比如 LLMChain 和APIChain
+Components of the same type, specifically different types are distinguished by kind, e.g. LLMChain and APIChain.
 
-### 运行时
+### Runtime
 
-* arcadia-controller 主要功能
+* arcadia-controller main functions:
 
-校验这些 CRD 的字段是有效的，比如引用了一个CR必须是存在的。
+Verify that the fields of these CRDs are valid, e.g. a CR must be present if it is referenced.
 
-静态检测，比如这个应用的节点不能成环，比如不能有多个输出，一定需要有一个节点的下一个节点是Output。
+Static detection, e.g. the nodes of this application can't be in a ring, e.g. there can't be more than one Output, there must need to be a node whose next node is an Output.
 
-* arcadia-apiserver 主要功能
+* arcadia-apiserver main functions:
 
-将应用实例化后开始按编排来执行，实际通过 langchaingo 调用应用，向 LLM 发请求，返回结果。
+Instantiate the application and start executing it on a choreographed basis, actually calling the application through langchaingo, sending requests to the LLM, and returning the results.
 
-详细信息和示例，可以参考 [LLM 应用场景](../Scenarios/llm-app-workflow-llmchain.md)
+For detailed information and examples, see [LLM Application Scenarios](../Scenarios/llm-app-workflow-llmchain.md)
