@@ -25,4 +25,4 @@ sidebar_label: 数据源
 
 MinIO 中按项目存储的结构如下图所示: 
 
-![](./../../../../../docs/Concepts/images/2024-01-05-15-01-34.png)
+![](../Concepts/images/2024-01-05-15-01-34.png)

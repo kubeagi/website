@@ -50,7 +50,7 @@ type WorkerStatus struct {
 
 Worker 的启动流程、注册会话、调用流程参考下图示意：
 
-![](./../../../../../docs/Concepts/images/2024-01-05-15-27-01.png)
+![](../Concepts/images/2024-01-05-15-27-01.png)
 
 
 ### Worker 节点推荐硬件资源要求

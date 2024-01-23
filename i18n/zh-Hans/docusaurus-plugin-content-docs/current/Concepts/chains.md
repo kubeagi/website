@@ -30,7 +30,7 @@ spec:
   temperature: 0.7
 ```
 
-关于如何在 AI 代理中使用它，请查看这个 [场景](../../../../../docs/Scenarios/llm-app-workflow-llmchain.md)
+关于如何在 AI 代理中使用它，请查看这个 [场景](../Scenarios/llm-app-workflow-llmchain.md)
 
 ### RetrievalQAChain
 RetrievalQAChain 是另一种特定设计用于问答任务的链式模型。它结合了检索模型和问答模型。检索模型负责根据输入的问题从大量的文本集合中检索相关的文档或段落，检索到的信息然后传递给问答模型，该模型分析问题和检索到的上下文，生成一个答案。
@@ -54,7 +54,7 @@ spec:
 
 目前它与 LLMChain 相同，但我们将其作为一个单独的资源/概念保留，因为我们可能在以后添加更多的属性。
 
-关于如何在 AI 代理中使用它，请查看这个 [场景](../../../../../docs/Scenarios/typical-llm-apps-ui.md)
+关于如何在 AI 代理中使用它，请查看这个 [场景](../Scenarios/typical-llm-apps-ui.md)
 
 ### APIChain
 APIChain 是一种允许 LLM 智能推断需要向哪个 API 发送请求以获取所需信息，并分析 API 响应以回答用户问题的链式模型。

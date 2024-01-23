@@ -8,7 +8,7 @@ sidebar_label: 架构概述
 
 关于技术架构，您可以参考下面的图片：
 
-![](./../../../../../docs/Concepts/images/2024-01-05-16-40-55.png)
+![](../Concepts/images/2024-01-05-16-40-55.png)
 
 ### Ingress
 KubeAGI 使用 Kubernetes Ingress Gateway 作为负载均衡器（LB）来进行基本的路由和负载均衡。您可以使用 Ingress Nginx 或其他 Ingress 实现。
