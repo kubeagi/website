@@ -80,7 +80,7 @@ Run command:
 make kind
 ```
 
-When kind created,link `ldconfig` to `ldconfig.real` in kind container.()
+When kind created,link `ldconfig` to `ldconfig.real` in kind container.
 
 ```shell
 docker exec -ti kubeagi-control-plane ln -s /sbin/ldconfig /sbin/ldconfig.real

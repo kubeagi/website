@@ -4,9 +4,9 @@ title: Vectorstores
 sidebar_label: Vectorstores
 ---
 
-VectorStore is a custom resource built on Kubernetes to manage vectorised data. Its main use is to provide a scalable, distributed way of storing and managing vector data, and also to determine the similarity of corresponding data through vectorised matching.
+VectorStore 是一个在 Kubernetes 上构建的自定义资源，用于管理向量化数据。它的主要用途是提供一种可扩展的、分布式的存储和管理向量数据的方式，也可以通过向量化匹配，判断对应数据的相似度。
 
-* An example of VectorStore:
+* VectorStore 示例
 
 ```yaml
 apiVersion: arcadia.kubeagi.k8s.com.cn/v1alpha1

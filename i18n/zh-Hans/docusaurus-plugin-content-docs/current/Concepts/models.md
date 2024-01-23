@@ -1,12 +1,12 @@
 ---
 sidebar_position: 4
-title: Models
-sidebar_label: Models
+title: 模型
+sidebar_label: 模型
 ---
 
-Model is a resource definition for a model repository to manage user-trained models for subsequent deployment of model services.
+Model 是对模型仓库的资源定义，用来管理用户训练好的模型，用于后续的模型服务部署。
 
-* Definition Specification
+* 定义规范
 
 ```golang
 // ModelSpec defines the desired state of Model
@@ -48,9 +48,9 @@ type Model struct {
 }
 ```
 
-* Core Process of Model Management
-1. User creates a CR Model, which contains only the display name and description information.
-2. User uploads the model file to the corresponding model file directory, e.g. if model.metadata.name is chatglm2-6b, which is created under the namespace kubeagi-test, then the model file needs to be uploaded to：
+* 模型管理核心流程
+1. 用户创建 CR Model，仅包含展示名、描述信息
+2. 用户上传模型文件到对应的模型文件目录，例如：如果 model.metadata.name 为 chatglm2-6b，创建在命名空间 kubeagi-test 下，则模型文件则需要上传到:
     - bucket: kubeagi-test 
     - object: model/chatglm2-6b/ 
-3. Update the Type field of the model to re-trigger the operator's update logic and re-validate the model storage state.
+3. 更新 model 的 Type 字段，重新触发 operator 的更新逻辑，重新验证模型存储状态
