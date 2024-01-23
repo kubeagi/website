@@ -20,4 +20,4 @@ sidebar_label: 大型语言模型应用
 
 将应用实例化后开始按编排来执行，实际通过 langchaingo 调用应用，向 LLM 发请求，返回结果。
 
-详细信息和示例，可以参考 [LLM 应用场景](../../../../../docs/Scenarios/llm-app-workflow-llmchain.md)
+详细信息和示例，可以参考 [LLM 应用场景](../Scenarios/llm-app-workflow-llmchain.md)

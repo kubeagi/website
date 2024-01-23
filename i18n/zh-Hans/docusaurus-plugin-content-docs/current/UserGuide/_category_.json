@@ -1,0 +1,8 @@
+{
+  "label": "User Guide",
+  "position": 6,
+  "link": {
+    "type": "generated-index",
+    "description": "User guide about how to use KubeAGI from end user perspective."
+  }
+}
