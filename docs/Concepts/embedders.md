@@ -4,13 +4,13 @@ title: Embedders
 sidebar_label: Embedders
 ---
 
-Embedder 模型服务用于将输入数据转换为更高维度、更有表现力的嵌入向量。这些嵌入向量可以捕捉输入数据的语义和语法特征，从而为后续的任务和模型提供更好的表示。
+The Embedder model service is used to transform input data into higher dimensional, more expressive embedding vectors. These embedding vectors capture the semantic and syntactic features of the input data, thus providing a better representation for subsequent tasks and models.
 
-Embedder 服务目前主要用在两个地方：
-* 将 Q/A 进行向量化，生成知识库
-* 在会话、支持库模型应用中，将用户提出的问题进行向量化
+The Embedder service is currently used in two main places:
+* Vectorise Q/A to generate knowledge bases
+* Vectorise questions posed by users in session, supporting repository modelling applications
 
-Embedder 服务定义示例：
+Example of an Embedder service definition:
 ```yaml
 apiVersion: arcadia.kubeagi.k8s.com.cn/v1alpha1
 kind: Embedder
