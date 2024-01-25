@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
-title: Create LLM Agent
-sidebar_label: Create LLM Agent
+title: 创建 LLM 智能体
+sidebar_label: 创建 LLM 智能体
 ---
 
 通过平台的应用管理，可以通过可视化的方式快速创建 AI 智能体，并对自己的智能体进行编排和调试。

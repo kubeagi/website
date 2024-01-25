@@ -1,0 +1,8 @@
+{
+  "label": "Distributed Inference",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Distributed inference using Ray cluster"
+  }
+}

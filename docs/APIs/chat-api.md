@@ -4,23 +4,23 @@ title: Chat APIs
 sidebar_label: Chat APIs
 ---
 
-### 对话型应用 API
-1. 对话 API ```post /chat-messages``` 可配置 SSE
+### Conversational Application API
+1. Conversational API ```post /chat-messages``` with configurable SSE
 
-这里有情求参数配置了 conversation_id 会话 ID，而应用 id 实际是创建 token 的时候隐含了。
+   The request parameter conversation_id is used to identify the session ID, while the application ID is implicitly included during token creation.
 
-2. 某条消息的反馈 API ```post /messages/{message_id}/feedbacks```
+2. Feedback API for a specific message ```post /messages/{message_id}/feedbacks```
 
-3. 消息的下一步问题建议 ```get /messages/{message_id}/suggested```
+3. Next suggested question for a message ```get /messages/{message_id}/suggested```
 
-4. 会话历史消息 ```get /messages```
+4. Conversation history of messages ```get /messages```
 
-5. 会话列表 ```get /conversations```
+5. List of conversations ```get /conversations```
 
-6. 会话重命名 ```post /conversations/{conversation_id}/name```
+6. Rename a conversation ```post /conversations/{conversation_id}/name```
 
-7. 删除会话 ```delete /conversations/{conversation_id}```
+7. Delete a conversation ```delete /conversations/{conversation_id}```
 
-8. 语音转文字 ```post /audio-to-text```
+8. Speech-to-text ```post /audio-to-text```
 
-9. 获取应用配置信息 ```get /parameters```
+9. Get application configuration information ```get /parameters```
