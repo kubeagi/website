@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-title: Introduction
-sidebar_label: Introduction
+title: 介绍
+sidebar_label: 介绍
 ---
 ## KubeAGI 介绍
 KubeAGI 是一款简单、多样化且安全的一站式 LLMOps 平台，旨在帮助每个人找到人类与人工智能更完美的融合。通过数据管理、数据处理、知识库构建、模型关联和模型应用构建，为企业开发者提供完整的开发平台。降低使用门槛，无开发背景的用户也可通过 KubeAGI 平台快速搭建自己的大模型应用，开箱即用。

@@ -4,14 +4,13 @@ title: Frequent Question
 sidebar_label: Frequent Question
 ---
 
-### Q1：为什么要做数据处理？
-A：对数据集文件做数据处理，存在两方面原因：
-第一：在数据处理模块，可对上传的文件做数据清洗，其中包括异常处理、去隐私处理等，这样可以保证数据的可用性和安全性。
-第二：为保证知识库应用的问答质量，在搭建知识库时，最好是关联 QA 格式的数据。当用户上传的是普通文档格式的文件时（如：pdf, docx），我们支持用户在数据处理模块对文件进行 QA 拆分。
+### Q1: Why is data processing necessary?
+A: Data processing is performed on dataset files for two main reasons:
+1. In the data processing module, data cleaning can be done on the uploaded files, which includes anomaly processing, de-privacy processing, and other preprocessing tasks. This ensures the usability and security of the data.
+2. To ensure the quality of the QA applications built on the knowledge base, it is preferable to have data in QA format. When users upload files in regular document formats (e.g. pdf, docx), the data processing module allows users to split the file into QA pairs.
 
-### Q2：必须要做数据处理才能搭建知识库吗？
-A：不是的。现版本为保证问答质量，我们的知识库对 csv 格式的文件（QA 内容）支持度相对较高，其他格式文件支持度偏低。如果您不进行数据处理，知识库直接关联原始文件，问答质量会偏低。所以我们建议您将原始文件进行 QA 拆分处理，这样您可以更精准的搜索您关心的知识内容。
+### Q2: Is data processing necessary to create a knowledge base?
+A: No, it is not mandatory. In the current version, to ensure the quality of the QA, the knowledge base has better support for CSV files (containing QA content) compared to other file formats. If you do not perform data processing, the knowledge base will directly associate with the original file, resulting in lower QA quality. Therefore, we recommend processing the original file to extract QA pairs, allowing for more accurate searching of the desired knowledge content.
 
-### Q3：如果我上传的本身就是 csv 文件，那还需要做数据处理吗？
-A：如果本身上传的就是 csv 文件，可以无需做 QA 拆分处理。但是，对于 csv 文件，必须符合 QA 内容规范，即必须是两列内容，那么我们会把第一列认定为 Q，第二列认定为 A。其他不符合规范的文件现版本无法处理。
-
+### Q3: If I upload a CSV file, do I still need to perform data processing?
+A: If you upload a CSV file directly, you do not need to perform QA pair extraction since the data is already in the appropriate format. However, please ensure that the CSV file adheres to the QA content format, meaning it should have two columns where the first column represents questions (Q) and the second column represents answers (A). Files that do not conform to this format cannot be processed in the current version.

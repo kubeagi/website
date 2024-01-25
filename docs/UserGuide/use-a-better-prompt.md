@@ -4,27 +4,27 @@ title: Tune your Prompt
 sidebar_label: Tune your Prompt
 ---
 
-在 AI 智能体中，Prompt 的重要性不容忽视。Prompt 是指向 AI 模型提供的指示或问题，用于引导其生成回应或执行特定任务。Prompt 的设计和选择可以显著影响 AI 模型的输出结果和行为。
+In an AI agent, the importance of prompts can't be ignored. A prompt refers to the instructions or questions provided to an AI model to guide its response generation or task execution. The design and selection of prompts can significantly influence the output and behavior of an AI model.
 
-* 引导模型行为：通过 Prompt，可以明确告诉模型应该采取何种行动或生成何种回应。Prompt可以定义任务的目标、期望的输出格式、所需的操作步骤等，以确保模型的行为符合预期。
-* 控制输出质量：通过合理的Prompt设计，可以引导模型生成更准确、相关、完整的回答。Prompt可以包含示例回答、期望的回答结构、问题细化等信息，帮助模型理解任务要求并生成更高质量的输出。
-* 语言风格和文本生成：Prompt可以用于指导AI模型生成特定的语言风格或文本风格。通过选择适当的词汇、句法结构和上下文信息，Prompt可以影响模型生成的回答具有正式、友好、专业等不同的口吻和风格。
-* 对话一致性：在对话系统中，Prompt可以用于确保对话的连贯性和一致性。通过在Prompt中提供对话历史、上下文信息或先前的对话片段，模型可以更好地理解对话背景并生成与之前回答一致的响应。
-* 避免误导和偏差：Prompt的设计可以帮助避免模型生成误导性、偏见性或不当的回答。通过明确规定对特定主题或敏感话题的处理方式，Prompt可以减少模型生成不适当内容的风险。
+* Guiding Model Behavior: Prompts can explicitly instruct the model on what actions to take or what responses to generate. They can define the task's objectives, expected output format, required steps, etc.to ensure that the model's behavior aligns with expectations.
+* Controlling Output Quality: Proper prompt design can guide the model to generate more accurate, relevant, and complete answers. Prompts can include example answers, expected answer structures, question refinements, etc. to help the model understand the task requirements and generate higher-quality outputs.
+* Language Style and Text Generation: Prompts can be used to guide AI models in generating specific language styles or text formats. By selecting appropriate vocabulary, syntactic structures, and contextual information, prompts can influence the generated answers to have different tones and styles, such as formal, friendly, professional, etc.
+* Dialogue Consistency: In dialogue systems, prompts can ensure coherence and consistency in the conversation. By providing dialogue history, contextual information, or previous dialogue segments in prompts, the model can better understand the conversation context and generate responses consistent with earlier interactions.
+* Avoiding Misleading and Bias: Prompt design can help avoid the generation of misleading, biased, or inappropriate answers. By explicitly specifying how to handle specific topics or sensitive issues within prompts, the risks of the model generating inappropriate content can be reduced.
 
-在前面介绍 LLM Agent 时，需要为其定义合适的 Prompt，目前 KubeAGI 在 Prompt 中支持三种占位符：
+When introducing the LLM Agent, it is necessary to define appropriate prompts. Currently, KubeAGI supports three types of placeholders in prompts:
 
-占位符    | 使用方式
+Placeholder    | Usage
 -------- | -----
-```{{.context}}``` | 被替换为相关的上下文信息（比如从知识库获取到的相关信息）
-```{{.history}}``` | 被替换为当前会话的历史，历史记录数量由模型的“对话轮次”决定
-```{{.question}}``` | 被替换为用户的提问
+```{{.context}}``` | Replaced with relevant contextual information (e.g. information retrieved from a knowledge base).
+```{{.history}}``` | Replaced with the current session's history, where the number of historical records is determined by the model's "dialogue turns".
+```{{.question}}``` | Replaced with the user's question.
 
-当向LLM发送问题时，对上面的占位符进行统一替换，然后将替换后的结果发送给模型进行处理。
+When sending a question to the LLM, these placeholders are uniformly replaced with the corresponding information, and the replaced prompt is then sent to the model for processing.
 
-### 提示词示例：
+### Example of prompt words:
 
-* 英语老师，使用 ```{{.question}}```
+* English teacher, using ```{{.question}}```
 ```
     I want you to act as an English translator, spelling corrector and improver. 
     I will speak to you in any language, and you will detect the language, 
@@ -36,7 +36,7 @@ sidebar_label: Tune your Prompt
     My sentence is: '{{.question}}'
 ```
 
-* 知识库，使用 ```{{.context}} {{.question}}```
+* Knowledge base, using ```{{.context}} {{.question}}```
 ```
     Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.  
     
@@ -47,7 +47,7 @@ sidebar_label: Tune your Prompt
     Helpful Answer:
 ```
 
-* 多轮对话，使用 ```{{.history}} {{.question}}```
+* Multi-round dialogue, using ```{{.history}} {{.question}}```
 ```
 The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.
 
@@ -58,4 +58,4 @@ Human: {{.question}}
 AI:
 ```
 
-* 如果对提示词工程感兴趣，可以参考 [提示工程指南](https://www.promptingguide.ai/zh) 进行系统性的学习。
+* If you are interested in prompt engineering, you can refer to [Prompt Engineering Guide](https://www.promptingguide.ai/zh) for systematic learning.
