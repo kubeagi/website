@@ -34,7 +34,7 @@ sidebar_label: 简介
 
 如果没有 kubernetes 集群，可以调度一个 [kind cluster](https://kind.sigs.k8s.io/)。根据运行 LLM Worker 时对 CPU 或 GPU 的选择，您可以选择：
 
-- [Create a kind cluster with/without GPU enabled](./QuickStart/create-cluster-using-kind.md)
+- [创建一个启用/禁用 GPU 的 Kubernetes 集群](./QuickStart/create-cluster-using-kind.md)
 
 
 ## CLI
@@ -49,10 +49,10 @@ sidebar_label: 简介
 为了增强 Golang 的AI能力，我们开发了一些软件包。以下是如何使用它们的示例。
 
 - [chat_with_document](https://github.com/kubeagi/arcadia/tree/main/examples/chat_with_document): 一个聊天服务器，能够与文档进行交流
-- [embedding](https://github.com/kubeagi/arcadia/tree/main/examples/embedding) 演示如何使用嵌入式服务将文档嵌入到向量存储
-- [rbac](https://github.com/kubeagi/arcadia/blob/main/examples/rbac/main.go) 演示如何使用 AI 查询 RBAC 中的安全风险
-- [zhipuai](https://github.com/kubeagi/arcadia/blob/main/examples/zhipuai/main.go) 演示如何使用智谱 [zhipuai client](https://github.com/kubeagi/arcadia/tree/main/pkg/llms/zhipuai)
-- [dashscope](https://github.com/kubeagi/arcadia/blob/main/examples/dashscope/main.go) 演示如何使用 [dashscope client](https://github.com/kubeagi/arcadia/tree/main/pkg/llms/dashscope) 与 qwen-7b-chat / qwen-14b-chat / llama2-7b-chat-v2 / llama2-13b-chat-v2 进行交流并使用嵌入式的 dashscope text-embedding-v1 / text-embedding-async-v1
+- [embedding](https://github.com/kubeagi/arcadia/tree/main/examples/embedding): 演示如何使用嵌入式服务将文档嵌入到向量存储
+- [rbac](https://github.com/kubeagi/arcadia/blob/main/examples/rbac/main.go): 演示如何使用 AI 查询 RBAC 中的安全风险
+- [zhipuai](https://github.com/kubeagi/arcadia/blob/main/examples/zhipuai/main.go): 演示如何使用智谱 [智谱客户端](https://github.com/kubeagi/arcadia/tree/main/pkg/llms/zhipuai)
+- [dashscope](https://github.com/kubeagi/arcadia/blob/main/examples/dashscope/main.go): 演示如何使用 [dashscope 客户端](https://github.com/kubeagi/arcadia/tree/main/pkg/llms/dashscope) 与 qwen-7b-chat / qwen-14b-chat / llama2-7b-chat-v2 / llama2-13b-chat-v2 进行交流并使用嵌入式的 dashscope text-embedding-v1 / text-embedding-async-v1
 
 ### 大语言模型
 
@@ -76,7 +76,7 @@ sidebar_label: 简介
 
 ## 贡献
 
-如果您想为 Arcadia 做出贡献，请参考贡献指南 [contribute guide](./Contribute/prepare-and-start.md)。
+如果您想为 Arcadia 做出贡献，请参考 [贡献指南](./Contribute/prepare-and-start.md)。
 
 ## 支持
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
-title: Tune your Prompt
-sidebar_label: Tune your Prompt
+title: 调整 Prompt
+sidebar_label: 调整 Prompt
 ---
 
 在 AI 智能体中，Prompt 的重要性不容忽视。Prompt 是指向 AI 模型提供的指示或问题，用于引导其生成回应或执行特定任务。Prompt 的设计和选择可以显著影响 AI 模型的输出结果和行为。

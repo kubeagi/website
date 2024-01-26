@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-title: Chat APIs
-sidebar_label: Chat APIs
+title: 对话 API
+sidebar_label: 对话 API
 ---
 
 ### 对话型应用 API

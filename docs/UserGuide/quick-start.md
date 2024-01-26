@@ -4,135 +4,135 @@ title: QuickStart
 sidebar_label: Quick Start
 ---
 
-在这里将会介绍如何快速搭建一个知识库应用。
+How to quickly build a knowledge base application will be described here.
 
-## 准备工作/前置条件
-- 需要准备知识库的语料文件，暂时仅支持 pdf、docx 格式的文件
-- 如果您不想使用内置模型，则需要准备模型文件
-- 如果要部署本地模型服务，需要准备算力资源
-- 如果对接外部模型服务，需要准备外部模型服务的信息，包含：厂商（暂时仅支持智谱、OpenAI、百川）、服务地址、Token
-## 操作流程图
-创建知识库
-![图 0](images/c5378e38ea5f8bc5011bddb40fb16ac39f46472fc51e432744ebe0af9e515e26.png)
+## Preparation/Pre-requisites
+- Preparation of a knowledge base corpus file is required, currently supporting only PDF and DOCX formats.
+- If you don't want to use the built-in models, you need to prepare model files.
+- If you want to deploy a local model service, you need to prepare arithmetic resources.
+- If integrating with an external model service, the following information of the external model service needs to be prepared: Vendor (currently supporting only Zhipuai, OpenAI, Baichuan), service address, and token.
+## Operational Flowchart
+Create knowledge bases
+![Fig. 0](images/c5378e38ea5f8bc5011bddb40fb16ac39f46472fc51e432744ebe0af9e515e26.png)
 
-## 操作步骤
-### 第一步：创建模型
-在平台中，我们会内置常见的开源模型，如：qwen-7b-chat、baichuan2-7b 等（具体内置模型请见：内置模型说明）。
-登录平台后，如果您使用内置模型，则可忽略此步骤；
-如果您不使用内置模型，则需要准备自己的模型文件，并将其上传至模型仓库中。操作流程如下：
-1. 进入模型仓库页面，点击【新增模型】按钮，进入新增模型页面，填写基本信息后，点击【确认】
-![图 1](images/a777ddb0e9fab429ab937d0e707c5d1bd5de40fc59c05441f6eac52e377f5777.png)
+## Operation Steps
+### Step 1: Create a Model
+In the platform, we have pre-built common open-source models such as: qwen-7b-chat, baichuan2-7b and so on. (For specific pre-built models, please refer to the Built-in Models documentation)
+If you are using the pre-built models, you can skip this step after logging into the platform.
+If you do not want to use the pre-built models, you need to prepare your own model file and upload it to the model repository. Follow the steps below:
+1. Go to the Model Repository page and click the【新增模型】button to access the model creation page. Fill in the required information on the model creation page. Click【确认】 to create the model.
+![Fig. 1](images/a777ddb0e9fab429ab937d0e707c5d1bd5de40fc59c05441f6eac52e377f5777.png) 
 
-2. 创建完成后，进入模型详情页面，在模型文件中上传模型文件。支持上传文件夹。
-![图 2](images/3379069b62f9a33281ef5dd9c1649601c605788e3d919d3879a1f8841292f8df.png)
-
-
-**提示**
-* 上传文件时，可能需要进行证书认证。当弹窗提示证书未受信任时，点击链接手动认证证书，然后返回页面重新上传文件即可。
-
-3. 模型其他操作
-  - 部署：跳转至“模型服务/新增模型服务”页面
-  - 编辑：支持编辑基本信息
-  - 删除
-
-4. 内置模型仅支持部署，不支持编辑、删除、上传文件、删除文件
-
-5. 可在模型详情页面查看模型介绍以及模型文件
-![图 3](images/02905fa510ab28208e961316fce2590558f7689030b97837ddf103cd4b6587e3.png)
+2. After creation, go to the model details page and upload model files in Model Files. Uploading folders is supported.
+   ![Fig. 2](images/3379069b62f9a33281ef5dd9c1649601c605788e3d919d3879a1f8841292f8df.png)
 
 
-### 第二步：新增模型服务
-1. 进入模型服务页面，点击【新增模型服务】按钮，进入新增模型服务页面。
-  部署本地模型服务时，需要选择对应的模型，以及配置服务规格。完成填写后，点击【确定】按钮，即可完成创建操作。
-![图 5](images/9501a487af304a69b34b2a76435610624868be260dd57e43bf7da4505142e104.png)
+**Note:**
+* When uploading files, certificate authentication may be required. When the pop-up window prompts that the certificate is not trusted, click the link to manually authenticate the certificate, and then return to the page to upload the file again.
 
-2. 可在模型服务详情页面查看模型服务信息
-![图 6](images/17b40812c628d726d89ce07f1c8f7802da66396d3696074c8c20dd76cce3f357.png)
+3. Other model operations
+  - Deployment: Go to the "模型服务/新增模型服务" page.
+  - Edit: Support editing basic information.
+  - Delete
 
+4. Built-in models support deployment only, do not support editing, deleting, uploading files, deleting files.
 
-3. 模型服务其他操作
-  * 上线/下线
-  * 编辑
-  * 删除
-
-### 第三步：创建数据集
-1. 登录平台后，进入数据集页面，点击【新增数据集】按钮，进入新增数据集页面，填写基本信息后，点击【确认】
-  * 数据集支持版本管理，新增数据集时，默认会同步新增一个 v1 版本
-  * 后续若想新增其他版本，在数据集列表点击【新增版本】即可。新增的版本会延续之前的版本号
-![图 7](images/49f6ce23d73389df7d25f2b578c67375eb804f41ab7d89a38a5309c397f64bfd.png)
-
-![图 8](images/e771987377e65f07cfc37c5f3c2e7c4c140b627a2bad19abb710888aa584cd9c.png)
-
-2. 新增数据集成功后，在数据集版本详情中进行文件的导入。点击【新增文件】，上传准备好的 pdf 或 docx 文件。
-![图 9](images/f296d59658955fc6c39ea63bdcb19cf7f735cbf21fca06c0b5152dac08877c08.png)
-
-![图 10](images/87433826c32fb12d18c6066c07be2edeef6d263980bdfebec871fe8c92ed3539.png)
-
-**提示**
-* 上传文件时，可能需要进行证书认证。当弹窗提示证书未受信任时，点击链接手动认证证书，然后返回页面重新上传文件即可。
-
-3. 数据集其他操作
-  * 支持新增数据集版本
-  * 支持为数据集版本导入新的数据
-  * 支持查看 csv 格式的数据集文件（即经过 QA 拆分数据处理的文件，此内容会在“数据处理”模块详细描述）
-  * 支持删除数据集版本
-  * 支持删除数据集
-
-### 第四步：数据处理
-1. 在创建完数据集并上传文件后，可对数据集文件进行数据处理操作。进入数据处理页面，点击【创建处理任务】
-
-![图 11](images/2c24f874e049d9b8e922906ef19103c1a70adbf4c7b88abfd9d3295706f28d8b.png)
+5. Model descriptions and model files can be viewed on the model details page.
+![Fig. 3](images/02905fa510ab28208e961316fce2590558f7689030b97837ddf103cd4b6587e3.png)
 
 
-2. 填写任务基本信息，并选择要处理的文件
-![图 12](images/00403fdd9555db2fb42d56dd0d3ce4134d8a9154a0627dfdfa605591576a54b5.png)
+### Step 2: Add Model Service
+1. Enter the Model Services page and click the【新增模型服务】button to enter the Add Model Service page.
+   When deploying a local model service, you need to select the corresponding model and configure the service specifications. After you finish filling in the form, click the【确定】button to complete the creation operation.
+![Fig. 5](images/9501a487af304a69b34b2a76435610624868be260dd57e43bf7da4505142e104.png)
 
-![图 13](images/343d9d3b0d04176f54840af284c46a68e55942487672392169b593db1643ec84.png)
-
-**提示**
-* 处理前数据集：选择想要处理的数据集
-* 处理后数据集：选择将处理后的文件存储到哪一个数据集/版本中，v0.1.0 版本默认存储至源数据集/版本中
-
-3. 选择完数据集文件后，选择处理配置
-![图 14](images/e922d6aa7b3e7989ada9aca5f3be8a5d0d174be2161fea453f9efc3324aeb4ca.png)
-
-![图 15](images/c5525f7036efdb65ed81038b0283d6bbf3d3c3a85a31cdd1fd7a4d21a20ec6c5.png)
-
-**提示**
-* 开启开关，表示要做此项处理，关闭开关，任务将不做此项处理。最少选择一个配置，默认开启 QA 拆分开关。
-* 做 QA 拆分处理时，需要选择模型服务。
-* QA 拆分后，将会生成一个新的 csv 文件，其中文件内容为拆分后的 QA 。
-支持在“数据集/数据集版本详情”中查看新生成的 csv 文件详情。
-
-4. 完成配置后，可进入配置预览页面，此处内容并非真实数据处理结果，而是数据处理样例。点击【完成】按钮，即可创建数据处理任务。
-
-![图 16](images/7bec0d9e4945b9224bf06e59ba27cd35a976a1fba1ef241a1e056f0c0155c449.png)
+2. Model service information can be viewed on the Model Service Details page.
+![Fig. 6](images/17b40812c628d726d89ce07f1c8f7802da66396d3696074c8c20dd76cce3f357.png)
 
 
-5. 可在数据处理详情页面查看任务进度与结果预览。
-![图 17](images/f7c0395a97bd92ed0cf08b72d08552c1198a1d3a5be5047bb930932789fc0290.png)
+3. Other operations of the model service
+  * Online/Offline
+  * Edit
+  * Delete                                           
+
+### Step 3: Create a dataset
+1. After logging in the platform, enter the dataset page, click the【新增数据集】button to enter the new dataset page, fill in the basic information and click【确认】.
+  * Datasets support version management, when adding a new dataset, it will add v1 version by default.
+  * If you want to add other versions, click【新增版本】in the dataset list. The new version will continue the previous version number.
+![Fig. 7](images/49f6ce23d73389df7d25f2b578c67375eb804f41ab7d89a38a5309c397f64bfd.png)
+
+![Fig. 8](images/e771987377e65f07cfc37c5f3c2e7c4c140b627a2bad19abb710888aa584cd9c.png)
+
+2. After successfully adding a new dataset, import the file in the dataset version details. Click【新增文件】to upload the prepared pdf or docx file. 
+![Fig. 9](images/f296d59658955fc6c39ea63bdcb19cf7f735cbf21fca06c0b5152dac08877c08.png)
+
+![Fig. 10](images/87433826c32fb12d18c6066c07be2edeef6d263980bdfebec871fe8c92ed3539.png)
+
+**Note:**
+* Certificate authentication may be required when uploading files. When a pop-up window prompts that the certificate is not trusted, click the link to manually authenticate the certificate, and then return to the page to upload the file again.
+
+3. Other Operations of Datasets
+  * Support adding dataset versions
+  * Support importing new data for dataset versions
+  * Support viewing CSV-format dataset files (i.e. files processed through QA data splitting, detailed in the "Data Processing" module)
+  * Support deleting dataset versions
+  * Support deleting datasets
+
+### Step 4: Data Processing
+1. After creating a dataset and uploading files, you can perform data processing operations on the dataset files. Go to the data processing page and click on 【创建处理任务】.
+
+![Fig. 11](images/2c24f874e049d9b8e922906ef19103c1a70adbf4c7b88abfd9d3295706f28d8b.png)
 
 
-6. 数据处理其他操作
-  * 支持删除任务。如果任务正在执行中，删除任务后，已处理的文件也将同时删除；如果任务已执行完成，删除任务后，不影响处理后的数据。
+2. Fill in the basic information for the task and select the files to be processed.
+![Fig. 12](images/00403fdd9555db2fb42d56dd0d3ce4134d8a9154a0627dfdfa605591576a54b5.png)
+
+![Fig. 13](images/343d9d3b0d04176f54840af284c46a68e55942487672392169b593db1643ec84.png)
+
+**Note:**
+* Pre-processing Dataset: Select the dataset you want to process.
+* Post-processing Dataset: Choose where to store the processed files in which dataset/version. By default, the processed files will be stored in the source dataset/version v0.1.0.
+
+3. After selecting the dataset files, choose the processing configuration.
+![Fig. 14](images/e922d6aa7b3e7989ada9aca5f3be8a5d0d174be2161fea453f9efc3324aeb4ca.png)
+
+![Fig. 15](images/c5525f7036efdb65ed81038b0283d6bbf3d3c3a85a31cdd1fd7a4d21a20ec6c5.png)
+
+**Note:**
+* Turn on the switch to indicate that you want to perform this processing. Turn off the switch, and the task will not perform this processing. At least one configuration must be selected, and the QA splitting switch is enabled by default.
+* When performing QA splitting, you need to select a model service.
+* After QA splitting, a new CSV file will be generated, containing the split QAs. 
+You can view the details of the newly generated CSV file in the “数据集/数据集版本详情” section.
+
+4. After completing the configuration, you can enter the configuration preview page. Please note that the content here is not the actual result of data processing but rather a data processing sample. Click the【完成】button to create the data processing task.
+
+![Fig. 16](images/7bec0d9e4945b9224bf06e59ba27cd35a976a1fba1ef241a1e056f0c0155c449.png)
 
 
-### 第五步：搭建知识库
-在部署完模型服务、处理完数据集数据后，可进行知识库的搭建，具体步骤如下：
-1. 进入知识库页面，点击【新增知识库】，进入新增知识库页面
-![图 18](images/ca147743ee38f760d93f73404c05cb013cbac55150a1057edab9aaab356ec01a.png)
-
-2. 填写基本信息，选择向量化模型，选择具体的语料文件
-
-3. 点击【确认】按钮，即可创建成功
-
-![图 19](images/bd4767356046d4ff08d8a7f86a40976410482b1ff9234453203e6fe1cd43d6dc.png)
+5. You can view the task progress and result preview on the data processing details page.
+![Fig. 17](images/f7c0395a97bd92ed0cf08b72d08552c1198a1d3a5be5047bb930932789fc0290.png)
 
 
-4. 可在知识库详情中查看文件列表以及文件的处理状态
-![图 20](images/a6368f70f5c7b8fff6aee9226f908cd3a718735db151db7a6f32c4df731fe31a.png)
+6. Other Operations of Data Processing
+  * Support task deletion. If a task is in progress, deleting the task will also delete the processed files. If a task has been completed, deleting the task will not affect the processed data.
 
-**提示**
-* 知识库创建完成后，平台会将文件自动进行向量化处理（QA 格式的文件，会将 Q 向量化），并且存储到向量数据库中。
 
-至此，知识库搭建完成。下一步进行模型应用的创建，开始体验生成式人工智能的强大能力。
+### Step 5: Build Knowledge Bases
+After deploying the model service and processing the dataset data, you can build a knowledge base. The specific steps are as follows:
+1. Go to the knowledge base page and click on【新增知识库】to enter the new knowledge base page.
+![Fig. 18](images/ca147743ee38f760d93f73404c05cb013cbac55150a1057edab9aaab356ec01a.png)
+
+2. Fill in the basic information, select the vectorization model, and choose the specific corpus files.
+
+3. Click the【确认】button to create the knowledge base successfully.
+
+![Fig. 19](images/bd4767356046d4ff08d8a7f86a40976410482b1ff9234453203e6fe1cd43d6dc.png)
+
+
+4. You can view the file list and the processing status of files in the knowledge base details.
+![Fig. 20](images/a6368f70f5c7b8fff6aee9226f908cd3a718735db151db7a6f32c4df731fe31a.png)
+
+**Note:**
+* After the knowledge base is created, the platform will automatically perform vectorization processing on the files (for QA format files, the Q will be vectorized) and store them in the vector database.
+
+At this point, the knowledge base construction is complete. The next step is to perform the creation of the model application and start experiencing the power of generative AI.

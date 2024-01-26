@@ -1,12 +1,12 @@
 ---
 sidebar_position: 3
-title: 使用Kind创建一个集群
-sidebar_label: 使用Kind创建一个集群
+title: 使用 Kind 创建一个集群
+sidebar_label: 使用 Kind 创建一个集群
 ---
 
-## 创建一个未启用GPU的Kind集群
+## 创建一个未启用 GPU 的 Kind 集群
 
-如果不想启用GPU支持，使用 Kind 调度一个集群非常容易，请按照以下步骤进行操作：
+如果不想启用 GPU 支持，使用 Kind 调度一个集群非常容易，请按照以下步骤进行操作：
 
 1. 安装 Kind CLI
 

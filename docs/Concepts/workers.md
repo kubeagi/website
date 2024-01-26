@@ -52,45 +52,45 @@ Worker startup process, registration session, and invocation process are illustr
 
 ![](./images/2024-01-05-15-27-01.png)
 
-### Worker 节点推荐硬件资源要求
+### Recommended Hardware Resource Requirements for Worker Nodes
 
 - CPU
-  - 不使用 CPU 推理：建议 2 核以上
-  - 使用 CPU 推理 Embedding 模型： 
-    - Lite/Small 级模型（~300 MB）：建议 4 核以上
-    - 一般及 Large 模型（700~1.5GB）：建议 8 核以上
-  - 使用 CPU 推理大模型：建议 16 核以上；
-    - 使用支持 AVX-512 指令集的 CPU 效率更高；
-    - CPU 推理大模型效率较为低下，仅供参考
+  - Inference without CPU：2 cores or more recommended
+  - Use CPU inference for Embedding models:
+    - Lite/Small level models (~300 MB): 4+ cores recommended
+    - General and Large models (700~1.5GB): 8+ cores recommended
+  - Large models using CPU inference：16 cores or more are recommended
+    - It is more efficient to use a CPU that supports the AVX-512 instruction set
+    - CPUs are less efficient at inference of large models, for reference only
 
-- 内存
-  - 不使用 CPU 推理：建议 2GB 以上
-  - 使用 CPU 推理 Embedding 模型：
-    - Lite/Small 级模型（~300 MB）：建议 4GB 以上
-    - 一般模型（~700 MB）：建议 6GB 以上
-    - Large 类模型（~1.5GB）：建议 8GB 以上
-  - 使用 CPU 推理大模型：
-    - 视模型规模而定，内存占用量与该模型在显卡上推理时占用的显存量基本相当
-    - CPU 推理大模型效率较为低下，且 CPU 通常不支持 int8/int4 量化，因此仅供参考
+- Memory
+  - Inference without CPU：2GB or more recommended
+  - Use CPU for inference on Embedding models:
+    - Lite/Small level models (~300 MB)：4GB or more recommended
+    - General model (~700 MB)：more than 6GB recommended
+    - Large models (~1.5GB)：more than 8GB recommended
+  - Use CPU for inference on large models:
+    - Depending on the model size, the amount of memory used is roughly equivalent to the amount of graphics memory used by the model when inferring on a graphics card.
+    - CPU inference for large models is less efficient, and CPU usually does not support int8/int4 quantisation, so it is for reference only.
 - GPU
-  - 建议使用英伟达 Turing 架构及更新的 GPU
-    - RTX 20 系列及更新的显卡；Tesla T4 及更新的加速卡
-  - 显存要求
-    - 每 1B 参数对应的显存占用比例（估算）
+  - Recommended GPUs for NVIDIA Turing architecture and newer
+    - RTX 20 series and newer graphics cards; Tesla T4 and newer accelerator cards
+  - Memory Requirements
+    - Ratio of memory usage per 1B parameter (estimated)
       - float32：4GB
-      - fp16/bf16：2GB —— 大多数无量化模型默认选项
+      - fp16/bf16：2GB —— Default options for most unquantified models
       - int8：1G
       - int4：0.5G
-    - 最低显存需求 = 参数量 × 比例 × 1.25，预留比例随模型不同有浮动
-    - 例：
-      - ChatGLM3-**6B**: 6 × 2 × 1.25 = 15 GB；官方要求 > 13GB
-      - Qwen-**72B-int4**：72 × 0.5 × 1.25 = 45 GB；官方要求 > 48GB
-  - 实际测试结果：
+    - Minimum Memory Requirement = Number of Gamers × Ratio × 1.25, the reserve ratio fluctuates depending on the model
+    - For example：
+      - ChatGLM3-**6B**: 6 × 2 × 1.25 = 15 GB；official requirements > 13GB
+      - Qwen-**72B-int4**：72 × 0.5 × 1.25 = 45 GB；official requirements > 48GB
+  - Actual test results:
 
-| 模型名称                                   | 实际显存占用    | 建议显存                           | 参考显卡配置                                                 |
-| ------------------------------------------ | --------------- | ---------------------------------- | ------------------------------------------------------------ |
-| ChatGLM2-6B                                | 13 GB（fp16）   | >= 16GB                            | 1 * Tesla T4 16GB<br />1 * RTX 4080 16GB<br />1 * RTX A4000 16GB |
-| 7B 级模型<br />（如 Qwen-7B，Baichuan2-7B) | 15 GB（fp16）   | >= 20GB<br />（T4 显卡推理不稳定） | 1 * RTX 3090 24GB<br />1 * RTX 4000 Ada 20GB<br />1 * RTX A5000 24GB |
-| 13B 级模型<br />(如 Qwen-13B)              | 28 GB（fp16）   | >= 32GB                            | 2 * Tesla T4 16GB<br />1 * V100 32GB                         |
-| 70B 级模型<br />（如 Qwen-72B）            | ~150 GB（fp16） | >= 160GB                           | 8 * RTX 3090 24GB<br />5 * V100 32GB<br />2 * A100 80GB      |
+| Model Name                                   | Actual GPU Memory Usage    | Recommended GPU Memory                           | Reference GPU Configurations                                                              |
+| -------------------------------------- | --------- | ------------------------------ |---------------------------------------------------------------|
+| ChatGLM2-6B                            | 13 GB（fp16） | >= 16GB                        | 1 * Tesla T4 16GB<br />1 * RTX 4080 16GB<br />1 * RTX A4000 16GB |
+| 77B Level Models<br />(e.g. Qwen-7B, Baichuan2-7B) Qwen-7B，Baichuan2-7B) | 15 GB（fp16） | >= 20GB<br />(T4 GPU inference may be unstable) | 1 * RTX 3090 24GB<br />1 * RTX 4000 Ada 20GB<br />1 * RTX A5000 24GB |
+| 13B Level Models<br />(e.g. Qwen-13B)          | 28 GB（fp16） | >= 32GB                        | 2 * Tesla T4 16GB<br />1 * V100 32GB                          |
+| 70B Level Models<br />(e.g. Qwen-72B)          | ~150 GB（fp16） | >= 160GB                       | 8 * RTX 3090 24GB<br />5 * V100 32GB<br />2 * A100 80GB       |
 

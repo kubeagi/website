@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
-title: Frequent Question
-sidebar_label: Frequent Question
+title: 常见问题
+sidebar_label: 常见问题
 ---
 
 ### Q1：为什么要做数据处理？
