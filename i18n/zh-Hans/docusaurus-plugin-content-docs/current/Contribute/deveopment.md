@@ -1,12 +1,12 @@
 ---
 sidebar_position: 2
-title: Create an Operator Project
-sidebar_label: Create an Operator Project
+title: 创建一个 Operator 项目
+sidebar_label: 创建一个 Operator 项目
 ---
 
-# Create an Operator Project
+# 创建一个 Operator 项目
 
-## Init a new operator project
+## 初始化一个 Operator 项目
 
 ```bash
 bash hack/install-operator-sdk
@@ -14,21 +14,21 @@ bash hack/install-operator-sdk
 operator-sdk init --domain kubeagi.k8s.com.cn --component-config true --owner kubeagi --project-name arcadia --repo github.com/kubeagi/arcadia
 ```
 
-## Create a CRD
+## 创建一个 CRD
 
 ```bash
 operator-sdk create api --resource --controller --namespaced=true --group arcadia --version v1alpha1 --kind Laboratory
 ```
 
-### Regenerate after changes on CRD
+### 在 CRD 发生变化后重新生成
 
 ```bash
 make generate && make manifests
 ```
 
-### Base controller reconcile
+### 基础控制器协调
 
-`// Note:` For ease of understanding only, it does not need to be written to the source file
+`// 注意:` 为便于理解，无需将其写入源文件。
 
 ```go
 func (r *KnowledgeBaseReconciler) Reconcile(ctx context.Context, req ctrl.Request) (result ctrl.Result, err error) {
@@ -78,5 +78,5 @@ func (r *KnowledgeBaseReconciler) Reconcile(ctx context.Context, req ctrl.Reques
 }
 ```
 
-### Update helm dependency
-If you update the helm dependency of deploy/charts/arcadia package, you should run ```helm dependency update```, it'll update Chart.lock, or the helm package will fail at build stage.
+### 更新 helm 依赖项
+如果更新了 deploy/charts/arcadia 软件包的 helm 依赖关系，则应运行 ```helm dependency update```，它将更新 Chart.lock，否则 helm 软件包将在构建阶段失败。
