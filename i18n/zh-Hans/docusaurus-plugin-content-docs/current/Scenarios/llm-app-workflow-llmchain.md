@@ -1,12 +1,12 @@
 ---
 sidebar_position: 2
-title: Application Workflow - LLMChain
-sidebar_label: Application Workflow - LLMChain
+title: 应用工作流程 - LLMChain
+sidebar_label: 应用工作流程 - LLMChain
 ---
 
-We'll introduce how to use LLMChain to create a simple LLM application workflow.
+我们将介绍如何使用 LLMChain 创建一个简单的 LLM 应用工作流程。
 
-Here is the yaml file to define the workflow, you can get the full file from https://github.com/kubeagi/arcadia/blob/main/config/samples/app_llmchain_englishteacher.yaml.
+以下是定义工作流程的 yaml 文件，您可以从 https://github.com/kubeagi/arcadia/blob/main/config/samples/app_llmchain_englishteacher.yaml 中获取完整文件。
 ```yaml
 apiVersion: arcadia.kubeagi.k8s.com.cn/v1alpha1
 kind: Application
@@ -93,37 +93,36 @@ spec:
     apiGroup: "arcadia.kubeagi.k8s.com.cn"
     kind: "Output"
 ```
-Here is the diagram that shows the nodes and referred resources, it may help you understand how it works.
+下图显示了节点和引用的资源，可以帮助您理解其工作原理。
 
 ![图 2](images/2c202e36119f2123c893a394104aaa9bef89850e04cae96d3bda123b40b9bae6.png)
 
-Explanation about the attributes in the yaml:
+yaml 中的属性说明：
 
-* Application - Kubernetes CRD as an abstraction of LLM application.
+* Application - 作为 LLM 应用程序抽象的 Kubernetes CRD。
   * prologue
-An initial or introductory part of a conversation or dialogue
+对话或对话的开头或引言部分
 
   * nodes
-List of nodes in this LLM application. Every node has name, displayName, description. And ref is the runtime object that this node refer to, normally it should have kind, name and optinal apiGroup. The nextNodeName is the next linked node to run.
+LLM 应用程序中的节点列表。每个节点都有名称、显示名称和描述。ref 是该节点引用的运行时对象，通常应包含种类、名称和可选的 apiGroup。nextNodeName 是下一个要运行的链接节点。
 
-    * Input: the first node of LLM app, and need the input from user, the next node will be prompt-node.
-    * prompt-node: the node to handle the prompt from Input and refer to a Prompt resource, the next node will be chain-node.
-    * llm-node: it's used to declare the LLM resource, and can be linked to the nodes that will use this LLM to run some task, the next node will be chain-node.
-    * chain-node: it refers to the LLMChain resource, and have prompt-node and llm-node as input. Chain is the core concept of langchain, and LLMChain is used to connect "Prompt" and "LLM". The next node will be Output.
-    * Output: declare the end node of LLM app and receive output message.
+    * Input: LLM 应用的第一个节点，需要用户输入，下一个节点将是 prompt-node。
+    * prompt-node: 用于处理来自 Input 节点的提示，并引用 Prompt 资源，下一个节点将是 chain-node。
+    * llm-node: 用于声明 LLM 资源，可以链接到使用该 LLM 运行任务的节点，下一个节点将是 chain-node。
+    * chain-node: 它指的是 LLMChain 资源，并将 prompt-node 和 llm-node 作为 input。Chain 是 langchain 的核心概念，LLMChain 用于连接 "Prompt "和 "LLM"。下一个节点将是 Output。
+    * Output: 声明 LLM 应用程序的结束节点，并接收输出消息。
 
-* Prompt - Kubernetes CRD as an abstraction of LLM prompt.
- Refer to the initial input or instruction provided to a Large Language Model (LLM) to guide its generation of text or responses.
- The input and output is just to limit the type of node that can be connected to this Prompt node, so it's not used during runtime.
+* Prompt - 作为 LLM 提示抽象的 Kubernetes CRD。
+  指提供给大型语言模型（LLM）的初始输入或指令，用于指导其生成文本或响应。
+  输入和输出只是为了限制可连接到此提示节点的节点类型，因此在运行时不会使用。
 
-* LLMChain  - Kubernetes CRD as an abstraction of LLM chain.
-Connect and extend the output of an LLM to generate a coherent and contextually consistent sequence of text. The output of one LLM becomes the input or continuation of another LLM, creating a chain-like structure.
-The input and output is just to limit the type of node that can be connected to this LLMChain node, so it's not used during runtime.
+* LLMChain  -作为 LLM chain抽象的 Kubernetes CRD。
+  连接并扩展 LLM 的输出，生成连贯且上下文一致的文本序列。一个 LLM 的输出将成为另一个 LLM 的输入或延续，从而创建一个类似链的结构。
+  输入和输出只是为了限制可连接到此 LLMChain 节点的节点类型，因此在运行时不会使用。
  
-* LLM - the LLM model service, such as baichuan-7b, qwen-14b, or embedding service, such as bge, m3e. Here we're using 'zhipuai' as the LLM and refer to the API key in a secret.
+* LLM - LLM 模型服务，如 baichuan-7b、qwen-14b，或嵌入服务，如 bge、m3e。在这里，我们使用 "zhipuai "作为 LLM，并以密文的形式引用 API 密钥。
+  因此，Appilcation 资源中的节点就是工作流的定义，它们之间使用 nextNodeName 进行连接。每个节点还引用使用其他资源定义的 K8s 资源，如 Prompt、LLM 和 LLMChain。在运行期间，工作流将按照应用程序定义的方式运行，并使用 Prompt、LLM、LLMChain 资源中指定的数据。
 
-So nodes inside the Appilcation resource is the definition of the workflow, and they are connected with each other using nextNodeName. Each node also refer to K8s resources that defined using other resources, like Prompt, LLM, LLMChain. During runtime, the workflow will run as how Application defined, and use the data specified in Prompt, LLM, LLMChain resources.
+  输入和输出节点是系统内置节点，以便更好地识别工作流的开始和结束，因此没有引用实际资源。
 
-Input and Output nodes are system built-in nodes, in order to better identify the start and end of the workflow, so no real resource is referred.
-
-Note, the ref of each node in the Application definition, kind and apiGroup will limit the type of this node, and the name determines the ultimately associated resource. And the input and output specified in each K8s resource, like Prompt, LLMChain, it just limits the type that can be referred by nodes inside the Application, and they can be referred by different Applications.
+请注意，Application 定义中每个节点的 ref、kind 和 apiGroup 将限制此节点的类型，而名称确定了最终关联的资源。每个 K8s 资源（如 Prompt、LLMChain）中指定的输入和输出仅限制可以由 Application 内部的节点引用的类型，它们可以被不同的 Application 引用。

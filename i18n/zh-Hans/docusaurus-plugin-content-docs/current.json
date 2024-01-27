@@ -64,11 +64,11 @@
     "description": "The generated-index page description for category Configuration in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Scenarios": {
-    "message": "Scenarios",
+    "message": "应用场景",
     "description": "The label for category Scenarios in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Scenarios.link.generated-index.description": {
-    "message": "Here are some typical user scenarios/solutions we support using KubeAGI.",
+    "message": "以下是我们使用 KubeAGI 支持的一些典型用户场景/解决方案。",
     "description": "The generated-index page description for category Scenarios in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.User Guide": {
@@ -80,11 +80,11 @@
     "description": "The generated-index page description for category User Guide in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Tools": {
-    "message": "Tools",
+    "message": "工具",
     "description": "The label for category Tools in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Tools.link.generated-index.description": {
-    "message": "This section will introduce tools that can be used with KubeAGI.",
+    "message": "本节将介绍可与 KubeAGI 配合使用的工具。",
     "description": "The generated-index page description for category Tools in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Release & Plan": {

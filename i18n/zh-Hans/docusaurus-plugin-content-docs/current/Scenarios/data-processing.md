@@ -1,10 +1,10 @@
 ---
 sidebar_position: 1
-title: Data Processing
-sidebar_label: Data Processing
+title: 数据处理
+sidebar_label: 数据处理
 ---
 
-Data Processing is used for data processing through MinIO, databases, Web APIs, etc. The data types handled include:
+数据处理用于通过 MinIO、数据库、Web API 等进行数据处理。处理的数据类型包括：
 - txt
 - json
 - doc
@@ -15,51 +15,50 @@ Data Processing is used for data processing through MinIO, databases, Web APIs, 
 - markdown
 - ppt
 
-### Supported Text Processing methods
+### 支持文本处理方法
 
-The data processing can support various methods including cleaning abnormal data, filtering, de-duplication, and anonymization.
-
-## Design
+数据处理可支持各种方法，包括清理异常数据、过滤、重复数据删除和匿名化等。
+## 设计
 
 ![Design](../../../../../static/img/data_process.drawio.png)
 
-## Local Development
-### Software Requirements
+## 本地开发
+### 软件要求
 
-Before setting up the local data-process environment, please make sure the following software is installed:
+在建立本地数据处理环境之前，请确保安装了以下软件：
 
 - Python 3.10.x
 
-### Environment Setup
+### 环境设置
 
-Install the Python dependencies in the requirements.txt file
+安装 requirements.txt 文件中的 Python 依赖项。
 
-### Running
+### 运行
 
-Run the server.py file in the data_manipulation directory
+在 data_manipulation 目录中运行 server.py 文件。
 
 # isort
-isort is a tool for sorting imports alphabetically within your Python code. It helps maintain a consistent and clean import order.
+isort 是一个用于按字母顺序排序 Python 代码中的导入语句的工具。它有助于保持一致和清晰的导入顺序。
 
-## install
+## 安装
 ```shell
 pip install isort
 ```
 
-## isort a file
+## isort 对文件进行排序
 ```shell
 isort server.py
 ```
 
-## isort a directory
+## isort 对目录进行排序
 ```shell
 isort data_manipulation
 ```
 
 
 # config.yml
-## dev phase
-The example config.yml is as the following:
+## 开发阶段
+config.yml 示例如下：
 ```yaml
 minio:
   access_key: '${MINIO_ACCESSKEY: hpU4SCmj5jixxx}'
@@ -92,8 +91,8 @@ backendPg:
   database: '${PG_DATABASE: arcadia}'
 ```
 
-## release phase
-The example config.yml is as the following:
+## 发布阶段
+config.yml 示例如下：
 ```yaml
 minio:
   access_key: hpU4SCmj5jixxx
@@ -125,4 +124,4 @@ backendPg:
   password: 123456
   database: arcadia
 ```
-In the K8s, you can use the config map to point to the /arcadia_app/data_manipulation/config.yml file.
+在 K8s 中，可以使用配置映射指向 /arcadia_app/data_manipulation/config.yml 文件。

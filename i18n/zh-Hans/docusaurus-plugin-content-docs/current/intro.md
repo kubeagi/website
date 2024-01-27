@@ -57,9 +57,9 @@ sidebar_label: 简介
 ### 大语言模型
 
 - ✅ [智谱 AI](https://github.com/kubeagi/arcadia/tree/main/pkg/llms/zhipuai)
-    - [例子](https://github.com/kubeagi/arcadia/blob/main/examples/zhipuai/main.go)
+    - [例如](https://github.com/kubeagi/arcadia/blob/main/examples/zhipuai/main.go)
 - ✅ [灵积模型服务](https://github.com/kubeagi/arcadia/tree/main/pkg/llms/dashscope)
-    - [例子](https://github.com/kubeagi/arcadia/blob/main/examples/dashscope/main.go)
+    - [例如](https://github.com/kubeagi/arcadia/blob/main/examples/dashscope/main.go)
 
 ### 向量嵌入
 
