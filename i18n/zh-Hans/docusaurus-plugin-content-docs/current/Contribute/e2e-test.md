@@ -1,17 +1,17 @@
 ---
 sidebar_position: 3
-title: e2e Test
-sidebar_label: e2e Test
+title: e2e 测试
+sidebar_label: e2e 测试
 ---
 
-<!--How to do e2e test to verify your code.-->
+<!--如何进行 e2e 测试以验证您的代码-->
 
-The overall test of KubeAGI is divided into code correctness check and e2e test. The code correctness check include code formatting checks, CRD verification, and LLM workflow, etc.  The e2e test ensures that the KubeAGI can work normally for the basic funcationalities.
+KubeAGI 的整体测试分为代码正确性检查和 e2e 测试。代码正确性检查包括代码格式检查、CRD 验证和 LLM 工作流等。 e2e 测试确保 KubeAGI 的基本功能能够正常工作。
 
-* Execute the test
+* 执行测试
     ```shell
     bash tests/example-test.sh
     ```
 
-### From Github
-You just need to push the code to github and the github action will automatically create the environment and execute the tests.
+### 从 Github
+您只需将代码推送到 github，github 操作就会自动创建环境并执行测试。

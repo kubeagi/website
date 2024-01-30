@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
-title: QuickStart
-sidebar_label: Quick Start
+title: 快速开始
+sidebar_label: 快速开始
 ---
 
 在这里将会介绍如何快速搭建一个知识库应用。

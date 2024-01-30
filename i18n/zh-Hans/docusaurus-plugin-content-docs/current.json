@@ -56,51 +56,51 @@
     "description": "The generated-index page description for category Concepts in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Configuration": {
-    "message": "Configuration",
+    "message": "相关配置",
     "description": "The label for category Configuration in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Configuration.link.generated-index.description": {
-    "message": "Configuration Options about KubeAGI.",
+    "message": "有关 KubeAGI 的配置选项。",
     "description": "The generated-index page description for category Configuration in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Scenarios": {
-    "message": "Scenarios",
+    "message": "应用场景",
     "description": "The label for category Scenarios in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Scenarios.link.generated-index.description": {
-    "message": "Here are some typical user scenarios/solutions we support using KubeAGI.",
+    "message": "以下是我们使用 KubeAGI 支持的一些典型用户场景/解决方案。",
     "description": "The generated-index page description for category Scenarios in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.User Guide": {
-    "message": "User Guide",
+    "message": "用户指南",
     "description": "The label for category User Guide in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.User Guide.link.generated-index.description": {
-    "message": "User guide about how to use KubeAGI from end user perspective.",
+    "message": "如何从最终用户角度使用 KubeAGI 的用户指南。",
     "description": "The generated-index page description for category User Guide in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Tools": {
-    "message": "Tools",
+    "message": "工具",
     "description": "The label for category Tools in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Tools.link.generated-index.description": {
-    "message": "This section will introduce tools that can be used with KubeAGI.",
+    "message": "本节将介绍可与 KubeAGI 配合使用的工具。",
     "description": "The generated-index page description for category Tools in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Release & Plan": {
-    "message": "Release & Plan",
+    "message": "发布与计划",
     "description": "The label for category Release & Plan in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Release & Plan.link.generated-index.description": {
-    "message": "Release & Plan",
+    "message": "发布与计划",
     "description": "The generated-index page description for category Release & Plan in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Distributed Inference": {
-    "message": "Distributed Inference",
+    "message": "分布式推理",
     "description": "The label for category Distributed Inference in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Distributed Inference.link.generated-index.description": {
-    "message": "Distributed inference using Ray cluster",
+    "message": "利用 Ray 集群进行分布式推理",
     "description": "The generated-index page description for category Distributed Inference in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.APIs": {
@@ -108,7 +108,7 @@
     "description": "The label for category APIs in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.APIs.link.generated-index.description": {
-    "message": "APIs for LLM application development",
+    "message": "LLM应用程序开发的API",
     "description": "The generated-index page description for category APIs in sidebar tutorialSidebar"
   }
 }
