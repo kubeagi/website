@@ -28,11 +28,14 @@ git clone https://github.com/kubeagi/arcadia.git
 2. 获取所需镜像
 
 容器镜像可在 Docker Hub 上获取。如果你的集群可以访问 Docker Hub，你可以将它们拉取并推送到你的镜像注册表或直接使用它们。
+
+* 我们目前使用的是最新的开发版本，稍后会将其更新为稳定版本。
+
 ```
 # image of core controller
-docker pull kubeagi/arcadia:v0.1.0
+docker pull kubeagi/arcadia:latest
 # image of data-processing
-docker pull kubeagi/data-processing:v0.1.0
+docker pull kubeagi/data-processing:latest
 # image of fastchat and its workers
 docker pull kubeagi/fastchat:v0.1.0
 docker pull kubeagi/fastchat-worker:v0.1.0
@@ -40,8 +43,8 @@ docker pull kubeagi/fastchat-worker:v0.1.0
 docker pull kubeagi/minio:RELEASE.2023-02-10T18-48-39Z
 # image of minio client to download objects
 docker pull kubeagi/minio-mc:RELEASE.2023-02-10T18-48-39Z
-# image of bff-server, contains apiserver and portal
-docker pull kubeagi/kubeagi-portal:v0.1.0
+# image of devops console
+docker pull kubeagi/ops-console:latest
 # image of vector database using chroma, to be replaced by pgvector
 docker pull kubeagi/chroma:0.4.14
 # image of streamlit, only used during runtime(not by helm)

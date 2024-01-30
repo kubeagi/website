@@ -28,11 +28,13 @@ git clone https://github.com/kubeagi/arcadia.git
 2. Get required images
 
 Container images are available in the Docker Hub. You can pull and push to your image registry or use them directly if your cluster can access docker hub.
+* We use the latest development version for now, will update it to a stable version later.
+
 ```
 # image of core controller
-docker pull kubeagi/arcadia:v0.1.0
+docker pull kubeagi/arcadia:latest
 # image of data-processing
-docker pull kubeagi/data-processing:v0.1.0
+docker pull kubeagi/data-processing:latest
 # image of fastchat and its workers
 docker pull kubeagi/fastchat:v0.1.0
 docker pull kubeagi/fastchat-worker:v0.1.0
@@ -40,8 +42,8 @@ docker pull kubeagi/fastchat-worker:v0.1.0
 docker pull kubeagi/minio:RELEASE.2023-02-10T18-48-39Z
 # image of minio client to download objects
 docker pull kubeagi/minio-mc:RELEASE.2023-02-10T18-48-39Z
-# image of bff-server, contains apiserver and portal
-docker pull kubeagi/kubeagi-portal:v0.1.0
+# image of devops console
+docker pull kubeagi/ops-console:latest
 # image of vector database using chroma, to be replaced by pgvector
 docker pull kubeagi/chroma:0.4.14
 # image of streamlit, only used during runtime(not by helm)
