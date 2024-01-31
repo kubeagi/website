@@ -10,7 +10,7 @@ sidebar_label: Evaluation
 
 ### 流程
 
-#### 数据
+#### 1. 准备待测数据
 
 一个典型的检索增强生成（RAG）应用通常会产生一系列数据。创建 RAG 应用评估任务时，需要以下列条目及格式准备数据，并以 csv 格式存储：
 
@@ -21,7 +21,11 @@ sidebar_label: Evaluation
 此外，在评估中，为了将应用与真实内容对齐，通常还需要：
 - 正确答案（ground_truths）`list[list[str]]`：用户提问所对应的真实、正确的答案。若一个问题下有多条正确答案（例如涉及多个部分的原文），条目间以分号`;`分割。
 
-#### “裁判”
+评估任务中，准备过程分为两部分：
+1. 由知识库数据生成 QA 对，作为待测数据中的问题集与正确答案
+2. 将生成的问题集交由 RAG 应用回答，采集回答内容及检索到的知识库上下文内容，作为待测数据中的上下文与回答
+
+#### 2. 准备“裁判”
 
 评估任务需要指定一个大模型或大模型服务作为评估者（或者说”裁判“/"考官"）。默认使用 GPT-3.5 作为裁判。
 
@@ -32,6 +36,13 @@ sidebar_label: Evaluation
 - 涉及专业领域知识（如医疗、金融）时，使用经过该领域知识微调的大模型效果更好。
 
 此外，部分指标需要使用 Embedding 模型将数据向量化。默认使用 OpenAI Embedding 接口，也可使用支持 Huggingface 库的本地模型，如 bge 系列。
+
+#### 3. 执行评估
+
+根据给定的参数、待测数据、裁判大模型，执行 ragas_once cli 工具，生成包括记录综合得分的 `summary.csv` 及单项 QA 得分的 `result.csv` 文件，作为评估结果。
+
+#### 4. 返回结果
+读取评估结果，返回分数及是否满足阈值要求。
 
 ### 指标
 
@@ -85,6 +96,76 @@ sidebar_label: Evaluation
     - 评估对象：回答、正确答案
 
 创建评估任务时，**默认评估前 5 项指标**。
+
+### RAG 评估 CR 定义示例
+
+```golang
+// RAGSpec defines the desired state of RAG
+type RAGSpec struct {
+	// CommonSpec
+	basev1alpha1.CommonSpec `json:",inline"`
+
+	// Application(required) defines the target of this RAG evaluation
+	Application *basev1alpha1.TypedObjectReference `json:"application"`
+
+	// Datasets defines the dataset which will be used to generate test datasets
+	Datasets []Dataset `json:"datasets"`
+
+	// JudgeLLM(required) defines the judge which is a LLM to evaluate RAG application against test dataset
+	JudgeLLM *basev1alpha1.TypedObjectReference `json:"judge_llm"`
+
+	// Metrics that this rag evaluation will do
+	Metrics []Metric `json:"metrics"`
+
+	// Report defines the evaluation report configurations
+	Report Report `json:"report,omitempty"`
+
+	// Storage storage must be provided and data needs to be saved throughout the evaluation phase.
+	Storage *corev1.PersistentVolumeClaimSpec `json:"storage"`
+
+	// ServiceAccountName define the user when the job is run
+	// +kubebuilder:default=default
+	ServiceAccountName string `json:"serviceAccountName,omitempty"`
+
+	// Suspend suspension of the evaluation process
+	// +kubebuilder:default=false
+	Suspend bool `json:"suspend,omitempty"`
+}
+
+// RAGStatus defines the observed state of RAG
+type RAGStatus struct {
+	// CompletionTime Evaluation completion time
+	CompletionTime *metav1.Time `json:"completionTime,omitempty"`
+
+	// Phase evaluation current stage,
+	// init,download,generate,judge,upload,complete
+	Phase RAGPhase `json:"phase,omitempty"`
+
+	// Conditions show the status of the job in the current stage
+	Conditions []v1.JobCondition `json:"conditions,omitempty"`
+}
+```
+#### Spec 字段详解
+- CommonSpec：基础描述性信息
+- Application：本次评估任务所要评测的 RAG 应用
+- Datasets：用于生成待测数据的QA数据集对象，包含：
+    - Source：数据集来源
+    - Files：数据集文件
+- JudgeLLM：用于评估待测数据的裁判大模型
+- Metrics：需要评估的指标列表。每个指标对象包括：
+    - Kind：指标类型
+    - Parameters：以键值对存储的参数，如权重等
+    - ToleranceThreshold：该指标的容忍阈值，得分低于该阈值表明 RAG 应用在该指标下表现不佳
+- Report：评估报告
+- Storage：申请的持久化存储，用于存储各类数据文件
+- ServiceAccountName：运行中的任务所属的用户名
+- Suspend：评估任务是否被中止
+
+#### Status 字段详解：
+- CompletionTime：完成当次评估任务的总耗时
+- Phase：评估任务所处的阶段：
+    - QA 生成；待测数据生成；评估；完成
+- Conditions：正在运行的子任务的状态
 
 ### ragas_once cli 工具
 
