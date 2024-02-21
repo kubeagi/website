@@ -8,6 +8,7 @@ sidebar_label: GPU and Node Affinity
 ## Use specified GPUs
 
 If you have different type of GPUs on the node, use additional environment variables in the worker to control which GPUs to use:
+
 ```yaml
 apiVersion: arcadia.kubeagi.k8s.com.cn/v1alpha1
 kind: Worker
@@ -26,7 +27,9 @@ spec:
 ```
 
 ## Schedule on specified Nodes
+
 You can also use nodeAffinity to schedule fastchat worker pod to the specified node(s), for example:
+
 ```yaml
 apiVersion: arcadia.kubeagi.k8s.com.cn/v1alpha1
 kind: Worker
