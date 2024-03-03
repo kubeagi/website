@@ -1,11 +1,12 @@
 ---
 sidebar_position: 2
-title: 使用 Streamlit 运行 LLM 应用程序
-sidebar_label: 使用 Streamlit 运行 LLM 应用程序
+title: Run LLM App using Streamlit
+sidebar_label: Run LLM App using Streamlit
 ---
 
 ## 为您的命名空间启用 Streamlit
-我们使用 Streamlit 作为进行数据分析和 LLM 应用程序开发的工具，并且我们可以为每个命名空间创建单独的 Streamlit 环境，以实现更好的隔离性
+我们使用 Streamlit 作为进行数据分析和 LLM 应用程序开发的工具，并且我们可以为每个命名空间创建单独的 Streamlit 环境，以实现更好的隔离性。
+
 1. 要为您的命名空间启动 Streamlit ，请将 ```kubeagi.k8s.com.cn/streamlit.installed: "true"``` 添加到该命名空间中
 ```yaml
 apiVersion: v1

@@ -47,3 +47,4 @@ Then you should add a ```files``` value as the input to call /chat API.
 curl -k -H "Authorization: bearer xxx" -XPOST https://portal.172.40.20.125.nip.io/kubeagi-apis/chat --data '{"query":"Write a meeting minutes based on the context","files":["meeting-minutes.mp3"],"response_mode":"blocking","conversion_id":"","app_name":"test", "app_namespace":"kubeagi-test"}'
 ```
 
+LLM application engine will get the files from the built-in s3 datasource(MinIO) under the specifed namespace, and use a ```upload``` folder, such as ```/kubeagi-test/upload/```. So make sure you have the files under this folder when call the chat API.
