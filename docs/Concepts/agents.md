@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+sidebar_position: 16
 title: Agents
 sidebar_label: Agents
 ---
@@ -25,6 +25,11 @@ In KubeAGI, an Agent can manage multiple tools. Here, tools can be understood as
 * Tools: Tools refer to specific utility programs, software libraries, algorithms, or resources that the Agent manages and uses. These tools can be software tools or algorithms used in areas such as data processing, machine learning, natural language processing, image recognition, etc. The Agent can enhance its capabilities and solve specific tasks or problems by invoking these tools. Tools are usually concrete implementations that can be accessed and utilized through the Agent's management and configuration.
 
 * Capabilities: Capabilities refer to the intelligent abilities or skills that the Agent possesses, representing the knowledge and techniques the Agent has in specific tasks or domains. Capabilities encompass aspects such as perception, reasoning, learning, planning, communication, decision-making, etc. Unlike tools, capabilities are more abstract and broad, representing the overall potential and characteristics of the Agent as an intelligent entity.
+
+We support the tools below that we can use in the agent.
+- Weather Query API
+- scraper
+- calculator
 
 An Agent can manage and use multiple tools, which can be seen as specific implementations of the Agent's capabilities. By managing different tools, the Agent can select and configure appropriate tools as needed to enhance its capabilities and perform specific tasks. Therefore, these tools can be considered as extensions and aids to the Agent, supporting its capabilities and enabling the fulfillment of specified instructions.
 

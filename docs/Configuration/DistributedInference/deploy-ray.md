@@ -14,7 +14,7 @@ Install Ray if we need to use distributed inference capability, following the st
 ```
 # Note: the images below for vLLM and Ray integration:
 # for fastchat worker
-# kubeagi/arcadia-fastchat-worker:vllm-v0.1.0
+# kubeagi/arcadia-fastchat-worker:vllm-v0.2.0
 # for head of ray cluster
 # kubeagi/ray-ml:2.9.0-py39-vllm
 ```

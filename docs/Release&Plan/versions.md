@@ -4,6 +4,30 @@ title: Versions
 sidebar_label: Versions
 ---
 # Released Versions
+### v0.2.0 - 2024/2/29
+
+[Release Notes](https://github.com/kubeagi/arcadia/releases/tag/v0.2.0)
+
+* Support evaluation of LLM application, and generate detail report
+* Improve QA to duplicate QA pair
+* Suppor to scrap web URLs
+* Knowledge Assistant - an AI agent that can generate abstract for PDF/Word/web links, and accumulate knowledge
+* Support pgvector as vector store
+* Support to save chat history to postgresql and return the history
+* Enhanced AI Agents
+  - Follow-up questions
+  - Show the reference of answer
+  - Show repsonse time
+* Add a new CRD Agent to provides agent capability in LLM application
+* Add tools to CRD Agent: bing_search, weather query
+* Support realtime search using bing
+* Support common text in knowledgebase
+* Inference
+  - Support to use Ray cluster for distributed inference
+  - Node affinity and use specified GPU on nodes
+  - Integrate with RDMA to distribute data/models - enterprise version
+* Support to publish AI agent to built-in store
+* Add agent-portal project for end user perspective
 
 ### v0.1.0 - 2023/12/29
 

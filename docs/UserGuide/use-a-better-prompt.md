@@ -19,6 +19,8 @@ Placeholder    | Usage
 ```{{.context}}``` | Replaced with relevant contextual information (e.g. information retrieved from a knowledge base).
 ```{{.history}}``` | Replaced with the current session's history, where the number of historical records is determined by the model's "dialogue turns".
 ```{{.question}}``` | Replaced with the user's question.
+```{{.date}}``` | Replaced with current date and weekday
+
 
 When sending a question to the LLM, these placeholders are uniformly replaced with the corresponding information, and the replaced prompt is then sent to the model for processing.
 
