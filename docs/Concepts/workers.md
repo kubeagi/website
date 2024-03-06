@@ -58,20 +58,21 @@ Worker startup process, registration session, and invocation process are illustr
   - Inference without CPU：2 cores or more recommended
   - Use CPU inference for Embedding models:
     - Lite/Small level models (~300 MB): 4+ cores recommended
-    - General and Large models (700~1.5GB): 8+ cores recommended
+    - General and Large models (700~1.5GB, e.g. bge-large-en-v1.5): 6+ cores recommended
+    - Larger models (>2GB, e.g. bge-m3): 8+ cores recommended, or use GPU instead
   - Large models using CPU inference：16 cores or more are recommended
-    - It is more efficient to use a CPU that supports the AVX-512 instruction set
-    - CPUs are less efficient at inference of large models, for reference only
+    - It is more efficient to use a CPU that doesn't support the AVX-512 instruction set
+    - CPUs are less efficient at inference of large models, requirements are for reference only
 
 - Memory
   - Inference without CPU：2GB or more recommended
   - Use CPU for inference on Embedding models:
-    - Lite/Small level models (~300 MB)：4GB or more recommended
-    - General model (~700 MB)：more than 6GB recommended
-    - Large models (~1.5GB)：more than 8GB recommended
+    - Lite/Small level models (~300 MB)：3GB or more are recommended
+    - General and Large models (700~1.5GB, e.g. bge-large-en-v1.5): 4GB or more are recommended
+    - Larger models (>2GB, e.g. bge-m3): 8GB or more are recommended, or use GPU with similar size VRAM instead
   - Use CPU for inference on large models:
     - Depending on the model size, the amount of memory used is roughly equivalent to the amount of graphics memory used by the model when inferring on a graphics card.
-    - CPU inference for large models is less efficient, and CPU usually does not support int8/int4 quantisation, so it is for reference only.
+    - CPU inference for large models is less efficient, and CPU usually does not support int8/int4 quantisation, so requirements are for reference only.
 - GPU
   - Recommended GPUs for NVIDIA Turing architecture and newer
     - RTX 20 series and newer graphics cards; Tesla T4 and newer accelerator cards
