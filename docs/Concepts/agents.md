@@ -28,7 +28,8 @@ In KubeAGI, an Agent can manage multiple tools. Here, tools can be understood as
 
 We support the tools below that we can use in the agent.
 - Weather Query API
-- scraper
+- Bing Search API
+- Web Scraper
 - calculator
 
 An Agent can manage and use multiple tools, which can be seen as specific implementations of the Agent's capabilities. By managing different tools, the Agent can select and configure appropriate tools as needed to enhance its capabilities and perform specific tasks. Therefore, these tools can be considered as extensions and aids to the Agent, supporting its capabilities and enabling the fulfillment of specified instructions.
@@ -47,6 +48,7 @@ spec:
       apiKey: <key to invoke API>
   options:
     maxIterations: 3
+    showToolAction: false # Whether to show the instructions that each tool will do during streaming mode
   type: zeroShot
 ```
 Currently, zeroShot type is supported in LLM applications, and you can reference built-in tools such as the weather query tool, bingsearch when using Agent.
@@ -94,3 +96,27 @@ Currently, zeroShot type is supported in LLM applications, and you can reference
       name: Output
 ```
 When you ask, "What is the weather like in Beijing today?" the large-scale model will automatically match the required tool, such as the "Weather Query API." The tool will gather the necessary information by making API calls, and then use the large-scale model to return the desired answer, such as "The weather in Beijing today is cloudy with a temperature of 1°C."
+
+### Reference
+
+Parameters each tool can support.
+
+```yaml
+# scraper tool
+  - name: Web Scraper
+    params:
+      async: "true"
+      delay: "3"
+      handleLinks: "true" # whether to handle the embedded links in the web urls
+      maxScrapedDataLength: "20200" # max data to return from scraper tool
+# Weather Query API tool
+  - name: Weather Query API
+    params:
+      apiKey:  <key to invoke API> # Ocp-Apim-Subscription-Key, get it from seniverse.com
+# Bing Search API tool
+  - name: Bing Search API
+    params:
+      apiKey:  <key to invoke API> # Ocp-Apim-Subscription-Key, get it from bing
+      count: 10 # max value is 50, ref: https://learn.microsoft.com/en-us/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#query-parameters
+
+```
